@@ -1,65 +1,24 @@
 /**
  * @author mrdoob / http://mrdoob.com
- * @author Mugen87 / https://github.com/Mugen87
- *
  * Based on @tojiro's vr-samples-utils.js
  */
 
 var WEBVR = {
 
+	isLatestAvailable: function () {
+
+		console.warn( 'WEBVR: isLatestAvailable() is being deprecated. Use .isAvailable() instead.' );
+		return this.isAvailable();
+
+	},
+
 	isAvailable: function () {
 
-		console.warn( 'WEBVR: isAvailable() is being deprecated. Use .checkAvailability() instead.' );
 		return navigator.getVRDisplays !== undefined;
 
 	},
 
-	checkAvailability: function () {
-
-		return new Promise( function( resolve, reject ) {
-
-			if ( navigator.getVRDisplays !== undefined ) {
-
-				navigator.getVRDisplays().then( function ( displays ) {
-
-					if ( displays.length === 0 ) {
-
-						reject( 'WebVR supported, but no VRDisplays found.' );
-
-					} else {
-
-						resolve();
-
-					}
-
-				} );
-
-			} else {
-
-				reject( 'Your browser does not support WebVR. See <a href="https://webvr.info">webvr.info</a> for assistance.' );
-
-			}
-
-		} );
-
-	},
-
-	getVRDisplay: function ( onDisplay ) {
-
-		if ( 'getVRDisplays' in navigator ) {
-
-			navigator.getVRDisplays()
-				.then( function ( displays ) {
-					onDisplay( displays[ 0 ] );
-				} );
-
-		}
-
-	},
-
 	getMessage: function () {
-
-		console.warn( 'WEBVR: getMessage() is being deprecated. Use .getMessageContainer( message ) instead.' );
 
 		var message;
 
@@ -106,41 +65,7 @@ var WEBVR = {
 
 	},
 
-	getMessageContainer: function ( message ) {
-
-		var container = document.createElement( 'div' );
-		container.style.position = 'absolute';
-		container.style.left = '0';
-		container.style.top = '0';
-		container.style.right = '0';
-		container.style.zIndex = '999';
-		container.align = 'center';
-
-		var error = document.createElement( 'div' );
-		error.style.fontFamily = 'sans-serif';
-		error.style.fontSize = '16px';
-		error.style.fontStyle = 'normal';
-		error.style.lineHeight = '26px';
-		error.style.backgroundColor = '#fff';
-		error.style.color = '#000';
-		error.style.padding = '10px 20px';
-		error.style.margin = '50px';
-		error.style.display = 'inline-block';
-		error.innerHTML = message;
-		container.appendChild( error );
-
-		return container;
-
-	},
-
-	getButton: function ( display, canvas ) {
-
-		if ( 'VREffect' in THREE && display instanceof THREE.VREffect ) {
-
-			console.error( 'WebVR.getButton() now expects a VRDisplay.' );
-			return document.createElement( 'button' );
-
-		}
+	getButton: function ( effect ) {
 
 		var button = document.createElement( 'button' );
 		button.style.position = 'absolute';
@@ -157,27 +82,18 @@ var WEBVR = {
 		button.style.fontStyle = 'normal';
 		button.style.textAlign = 'center';
 		button.style.zIndex = '999';
+		button.textContent = 'ENTER VR';
+		button.onclick = function() {
 
-		if ( display ) {
+			effect.isPresenting ? effect.exitPresent() : effect.requestPresent();
 
-			button.textContent = 'ENTER VR';
-			button.onclick = function () {
+		};
 
-				display.isPresenting ? display.exitPresent() : display.requestPresent( [ { source: canvas } ] );
+		window.addEventListener( 'vrdisplaypresentchange', function ( event ) {
 
-			};
+			button.textContent = effect.isPresenting ? 'EXIT VR' : 'ENTER VR';
 
-			window.addEventListener( 'vrdisplaypresentchange', function () {
-
-				button.textContent = display.isPresenting ? 'EXIT VR' : 'ENTER VR';
-
-			}, false );
-
-		} else {
-
-			button.textContent = 'NO VR DISPLAY';
-
-		}
+		}, false );
 
 		return button;
 
