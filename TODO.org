@@ -1,0 +1,11 @@
+ 
+1. Complete the projects section
+2. Add CV
+3. Change Logo and other resources
+4. start blogging
+
+
+Current workflow
+* jekyll sources goto gh-pages branch 
+** TODO change branch to something more comprehensible
+* Generated static site goes to master branch
