@@ -22,9 +22,11 @@ canvas {
 }
  div {
 
- width:100%;
- height:100%;
- margin: 5% auto;
+ width:50%;
+ height:50%;
+
+ margin: 25%;
+
  position: absolute;
 }
 
