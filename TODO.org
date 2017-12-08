@@ -7,5 +7,22 @@
 
 Current workflow
 * jekyll sources goto gh-pages branch 
-** TODO change branch to something more comprehensible
+** TODO change branch to something more comprehendible
 * Generated static site goes to master branch
+
+
+
+* Brain storming
+ Narration should guide design
+The website should be an extension of myself onto the web -
+What am I, Who am I ,
+A tranquil space with glitch, downtempo, , of (white-blue) with hints of "irregularities" ,
+
+
+
+So I am thinking having different
+
+"messing around stuff"
+"short write ups"
+"landing page" - a good cube, circle, particle, typing effect etc..
+

@@ -1,11 +1,40 @@
 ---
-layout: default
+layout: null
 ---
+<html>
+<script src="/assets/js/HomaPageCanvas.js"> </script>
+<body>
+<canvas id="canvas">
+The canvas is here
+</canvas>
+</body>
+<style type="text/css">
 
-<div class="lead pretty-links">
-  Hi! I am Tejaswi and this is me on the web. This site is still under construction.
 
-  I am from Bangalore, India and have been doing *different kinds* of programming and research professionally for the past 4 years, You can find my CV [here](/CV/).
- I am interested in image processing, computer vision and graphics mostly in the context of immersive experiences. You can find some of my projects [online](/projects).
+
+canvas {
+ width:100%;
+ height:100%;
+ margin: 0px;
+ position: absolute;
+ z-index: 1;
+ top: 0px;
+}
+ div {
+
+ width:100%;
+ height:100%;
+ margin: 5% auto;
+ position: absolute;
+}
+
+
+</style>
+
+<div class="" id="maintext">
+     This is the extension of my Self on the web. I expect this space to grow and evolve as I do. For now this is one more corner of the web that few people visit, but those who do visit have a good reason to.
+     
+ 
 
 </div>
+</html>
