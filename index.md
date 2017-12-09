@@ -2,7 +2,7 @@
 layout: null
 ---
 <html>
-<script src="/assets/js/HomaPageCanvas.js"> </script>
+
 <body>
 <canvas id="canvas">
 The canvas is here
@@ -39,4 +39,5 @@ canvas {
  
 
 </div>
+<script src="/assets/js/HomaPageCanvas.js"> </script>
 </html>
