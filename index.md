@@ -5,7 +5,7 @@ layout: null
 
 <body>
 <canvas id="canvas">
-The canvas is here
+hmmm, something went wrong.
 </canvas>
 </body>
 <style type="text/css">
@@ -30,11 +30,12 @@ canvas {
  position: absolute;
 }
 
-
 </style>
-
+<!--- Hello Munt! This easter egg is for you -->
 <div class="" id="maintext">
-     This is the extension of my Self on the web. I expect this space to grow and evolve as I do. For now this is one more corner of the web that few people visit, but those who do visit have a good reason to.
+
+
+This is the extension of my Self on the web. I expect this space to grow and evolve as I do. For now this is one more corner of the web that few people visit, but those who do visit have a good reason to.
      
  
 

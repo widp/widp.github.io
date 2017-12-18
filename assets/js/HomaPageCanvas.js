@@ -19,12 +19,14 @@ function whitenoisegen(audioContext) {
 //    var bufferSize = 4096;
     var bufferSize  = 256;
     var whiteNoise = audioContext.createScriptProcessor(bufferSize, 1, 1);
+
     whiteNoise.onaudioprocess = function(e) {
 	var output = e.outputBuffer.getChannelData(0);
 	for (var i = 0; i < bufferSize; i++) {
             output[i] = Math.random() * 2 - 1;
 	}
     }
+
     var gainNode  = audioContext.createGain();
     gainNode.gain.value = 0.008;
     whiteNoise.connect(gainNode);
