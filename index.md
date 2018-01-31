@@ -1,44 +1,37 @@
 ---
 layout: null
+title: Home
 ---
 <html>
 
 <body>
-<canvas id="canvas">
-hmmm, something went wrong.
-</canvas>
+<div class="" id="maintext">
+<h1> Tejaswi  D Prakash </h1>
+<div class="" id="topbar">
+[<a href="/blog/index.html">blog</a>] [<a href="/lab/index.html">lab</a>] [<a href="http://github.com/widp">github</a>]
+</div>
+
+<p>I like sounds, visuals, programming, and math. </p>
+<p>You can reach me at tejaswidprakash[at]gmail.com.</p>
+
+</div>
+
 </body>
 <style type="text/css">
 
 
 
-canvas {
- width:100%;
- height:100%;
- margin: 0px;
- position: absolute;
- z-index: 1;
- top: 0px;
-}
- div {
+#maintext {
 
- width:50%;
- height:50%;
+width:50%;
+height:50%;
 
- margin: 25%;
+margin: 15%;
 
- position: absolute;
+position: absolute;
 }
 
 </style>
-<!--- Hello Munt! This easter egg is for you -->
-<div class="" id="maintext">
 
 
-This is the extension of my Self on the web. I expect this space to grow and evolve as I do. For now this is one more corner of the web that few people visit, but those who do visit have a good reason to.
-     
- 
-
-</div>
-<script src="/assets/js/HomaPageCanvas.js"> </script>
 </html>

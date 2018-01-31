@@ -1,4 +1,6 @@
-_site
+.bundle
 .sass-cache
-.jekyll-metadata
-npm-debug.log
+Gemfile.lock
+_site
+*.gem
+*~
