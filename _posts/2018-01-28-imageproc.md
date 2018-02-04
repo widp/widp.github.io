@@ -4,7 +4,7 @@ title: Fundus Vessel Segmentation
 desc: Segmenting blood vessels from images of the eye
 ---
 
-[This github repository](http://github.com/tejaswidp/fundus_vessel_segmentation)
+[This github repository](http://github.com/widp/fundus-vessel-segmentation)
 contains Matlab code of algorithms which could be used for blood
 vessel segmentation from fundus images.
 
