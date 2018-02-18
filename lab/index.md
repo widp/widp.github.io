@@ -40,7 +40,7 @@ A 3d model of my head
 </a>
  </li>
 </ul>
-<button onclick="toggleSnowCrash()">Snow crash</button>
+<input type="button" id="snowcrashbutton" value="Snow Crash" onclick="toggleSnowCrash()">
 </div>
 
 <script src="assets/js/static.js"> </script>

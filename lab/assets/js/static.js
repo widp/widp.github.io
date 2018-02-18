@@ -2,14 +2,17 @@ var requestId;
 var playing = false;
 var audioCtx ;
 var c = document.getElementById('canvas');
-
+var button = document.getElementById('snowcrashbutton');
 function toggleSnowCrash() {
-    if(!playing)
+    if(!playing) {
 	init();
+	button.value = "turn off";
+    }
     else {
+	button.value = "Snow Crash";
 	stop(audioCtx);
     }
-
+    
     playing = !playing;
 }
 
