@@ -13,10 +13,9 @@ hmmm, something went wrong.
 canvas {
  width:100%;
  height:100%;
- margin: 0px;
  position: absolute;
  z-index: -1;
- top: 0px;
+
 }
  div {
 
