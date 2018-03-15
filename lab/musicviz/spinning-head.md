@@ -40,12 +40,13 @@ desc: My head, scanned and rotating
   var button = document.getElementById("play");
   var isInit = false;
   var sound;
+  init();
   function toggleanimation(){
     if(!playing && !isInit) {
       button.value = "pause";
       isInit = true;
       playing = true;
-      init();
+      sound.play();
       animate();
     }
     else if(!playing) {
@@ -82,7 +83,6 @@ desc: My head, scanned and rotating
 		  sound.setBuffer(buffer);
 		  sound.setLoop(false);
 		  sound.setVolume(0.5);
-		  sound.play();
 	  });
 	  geometry = new THREE.Geometry();
 
