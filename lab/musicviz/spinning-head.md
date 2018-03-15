@@ -39,6 +39,7 @@ desc: My head, scanned and rotating
   var requestId,playing=false;
   var button = document.getElementById("play");
   var isInit = false;
+  var sound;
   function toggleanimation(){
     if(!playing && !isInit) {
       button.value = "pause";
@@ -49,12 +50,15 @@ desc: My head, scanned and rotating
     }
     else if(!playing) {
       playing = true;
+      sound.play();
       animate();
-      button.value = "play";
+
+      button.value = "pause";
 
     }
     else {
-      button.value = "pause";
+      button.value = "play";
+      sound.pause();
       playing = false;
 
     }
@@ -71,7 +75,7 @@ desc: My head, scanned and rotating
 	  scene = new THREE.Scene();
 	  var audiolistener = new THREE.AudioListener();
 	  camera.add(audiolistener);
-	  var sound = new THREE.Audio(audiolistener);
+	  sound = new THREE.Audio(audiolistener);
 	  analyser = new THREE.AudioAnalyser(sound,32);
 	  var audioloader = new THREE.AudioLoader();
 	  audioloader.load('assets/audio/bensound-scifi.mp3',function(buffer){
@@ -132,7 +136,7 @@ desc: My head, scanned and rotating
 
     var manager = new THREE.LoadingManager();
     manager.onProgress = function ( item, loaded, total ) {
- 				console.log( item, loaded, total );}
+ 			console.log( item, loaded, total );}
 
 
 
