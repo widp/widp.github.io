@@ -10,6 +10,10 @@ hmmm, something went wrong.
 </canvas>
 </body>
 <style type="text/css">
+* {
+   margin: 0;
+   padding: 0;
+}
 canvas {
  width:100%;
  height:100%;
@@ -17,14 +21,18 @@ canvas {
  z-index: -1;
 
 }
- div {
+html, body{
+width:100%;
+height:100%;
+}
+div {
 
- width:50%;
- height:50%;
+width:50%;
+height:50%;
 
- margin: 25%;
+margin: 25%;
 
- position: absolute;
+position: absolute;
 }
 
 </style>

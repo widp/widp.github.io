@@ -8,7 +8,7 @@ title: Home
 <div class="" id="maintext">
 <h1> Tejaswi  D Prakash </h1>
 <div class="" id="topbar">
-[<a href="/blog/index.html">blog</a>] [<a href="/lab/index.html">lab</a>] [<a href="http://github.com/widp">github</a>]
+[<a href="/CV/cv.html">CV</a>] [<a href="/lab/index.html">lab</a>] [<a href="http://github.com/widp">github</a>]
 </div>
 
 <p>I like sounds, visuals, programming, and math. </p>
