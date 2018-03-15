@@ -130,6 +130,12 @@ desc: My head, scanned and rotating
 	  pointlight.name = "light";
 	  scene.add(pointlight);
 
+    var manager = new THREE.LoadingManager();
+    manager.onProgress = function ( item, loaded, total ) {
+ 				console.log( item, loaded, total );}
+
+
+
 
 	  var onProgress = function ( xhr ) {
 		  if ( xhr.lengthComputable ) {
@@ -140,7 +146,7 @@ desc: My head, scanned and rotating
 	  var onError = function ( xhr ) {
 	  };
 	  // load 3d model
-	  var loader = new THREE.OBJLoader( );
+	  var loader = new THREE.OBJLoader( manager);
 	  loader.load( 'assets/models/model.obj', function ( object ) {
 		  object.name = "head";
 		  scene.add( object );
