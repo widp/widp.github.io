@@ -10,7 +10,6 @@
  var isInit = false;
  var sound;
  isInit = init();
- 
  function toggleanimation(){
     if(!playing && isInit) {
          playing = true;
@@ -109,9 +108,11 @@
      manager.onProgress = function ( item, loaded, total ) {
          progressbar.value = loaded*100;
          progressbar.innerhtml = loaded * 100;
-         if(loaded == 1)
-         button.style.visibility = 'visible';
+
      };
+     manager.onLoad = function () {
+        button.style.visibility = 'visible';
+    };
 
 
      var onProgress = function ( xhr ) {
