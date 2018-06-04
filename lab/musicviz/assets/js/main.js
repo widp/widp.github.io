@@ -1,25 +1,18 @@
- //TODO put a gif or webm here and move the visualizer to a separate page.
+ //TODO FIX race condition loading problem
  var container;
  var camera, scene, renderer;
  var mouseX = 0, mouseY = 0;
  var windowHalfX = window.innerWidth / 2;
  var windowHalfY = window.innerHeight / 2;
  var analyser;
- var progressBar = document.createElement('div');
  var requestId,playing=false;
  var button = document.getElementById("play");
  var isInit = false;
  var sound;
- init();
+ isInit = init();
+ 
  function toggleanimation(){
-     if(!playing && !isInit) {
-         button.value = "pause";
-         isInit = true;
-         playing = true;
-         sound.play();
-         animate();
-     }
-     else if(!playing) {
+    if(!playing && isInit) {
          playing = true;
          sound.play();
          animate();
@@ -27,23 +20,27 @@
          button.value = "pause";
 
      }
-     else {
+     else if(playing && isInit) {
          button.value = "play";
          sound.pause();
          playing = false;
 
      }
+     else {
+         console.log("still waiting");
+     }
  }
- function init() {
-
-
+ function foo() {
      container = document.getElementById( 'WebGLCanvas' );
-
+     
+    //camera setup
      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 20000 );
      camera.position.z = 10;
      camera.position.x = 0;
      camera.position.y = 0;
      scene = new THREE.Scene();
+     
+     //audio setup
      var audiolistener = new THREE.AudioListener();
      camera.add(audiolistener);
      sound = new THREE.Audio(audiolistener);
@@ -53,7 +50,7 @@
          sound.setBuffer(buffer);
          sound.setLoop(false);
          sound.setVolume(0.5);
-     });
+     }); //loading audio file
      geometry = new THREE.Geometry();
 
      for ( i = 0; i < 2000; i ++ ) {
@@ -100,10 +97,12 @@
      sphere.name = "sphere";
      scene.add(sphere);
 
-     var pointlight = new THREE.PointLight(0xA000ff,1,500);
+     var pointlight = new THREE.PointLight(0xa000fe,1,500);
+     pointlight.position.set(0,0,0);
      pointlight.name = "light";
      scene.add(pointlight);
 
+     // copy-pasted : To be reviewed
      var manager = new THREE.LoadingManager();
 
      var progressbar = document.getElementById('progress-bar');
@@ -130,6 +129,8 @@
          scene.add( object );
      }, onProgress, onError );
 
+     // END Of MAJOR COPY PASTE BOTCH
+
      renderer = new THREE.WebGLRenderer();
      renderer.setPixelRatio( window.devicePixelRatio );
      renderer.setSize( window.innerWidth, window.innerHeight );
@@ -138,11 +139,17 @@
      document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
      window.addEventListener( 'resize', onWindowResize, false );
+     return true;
+    }
 
+async function init() {
+    var result = await foo();
+    return result;
  }
  function onWindowResize() {
      windowHalfX = window.innerWidth / 2;
      windowHalfY = window.innerHeight / 2;
+
      camera.aspect = window.innerWidth / window.innerHeight;
      camera.updateProjectionMatrix();
      renderer.setSize( window.innerWidth, window.innerHeight );
