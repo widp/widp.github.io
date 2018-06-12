@@ -21,7 +21,7 @@
             <div class="tile is-1 is-vertical">
             </div>
             <div class="tile is-8 is-child">
-                <canvas class="box" id="canvas"> 
+                <canvas class="box" id="canvas">
                     Unsupported
                 </canvas>
             </div>
@@ -29,7 +29,20 @@
         </div>
         </div>
     <link rel="stylesheet" href="bulma.min.css">
-    <script src="index.js">
+    <script id="2d-vertex-shader" type="x-shader/x-vertex">
+      // <![CDATA[
+attribute vec2 a_position;
+void main() {
+gl_Position = vec4(a_position, 0, 1);
+}
+// ]]></script>
+     <script id="2d-fragment-shader" type="x-shader/x-fragment">
+      // <![CDATA[
+void main() {
+    gl_FragColor = vec4(gl_FragCoord.x /240., gl_FragCoord.y/180., 0, 1.0);
+}
+// ]]></script>
+   <script src="canvas-test.js">
     </script>
     </body>
 </html>
