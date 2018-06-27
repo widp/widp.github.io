@@ -1,9 +1,11 @@
 //https://blog.mayflower.de/4584-Playing-around-with-pixel-shaders-in-WebGL.html
+//remove to debug
+console.log = function() {}
 function createShader (gl, sourceCode, type) {
     var shader = gl.createShader(type);
     gl.shaderSource(shader, sourceCode);
     gl.compileShader(shader);
-
+    console.log("compiling" + sourceCode);
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
         var info = gl.getShaderInfoLog(shader);
         throw "could not compile web gl shader. \n\n" + info;
