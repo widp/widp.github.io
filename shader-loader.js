@@ -12,8 +12,19 @@ function createShader (gl, sourceCode, type) {
     return shader;
 }
 var gl,program,canvas, buffer;
-window.onload=init;
-function init(){
+document.onload=loadshader();
+function loadshader() {
+    var client = new XMLHttpRequest();
+    client.open('GET', 'pixel-shaders/pixel-shader1.glsl');
+    client.onreadystatechange = function() {
+        console.log(client.responseText);
+        pixelShader = client.responseText;
+        init(pixelShader);
+    };
+    client.send();
+}
+
+function init(fragmentShaderSource){
     canvas = document.getElementById("canvas");
     gl= canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
     canvas.width = 240;
@@ -36,8 +47,6 @@ function init(){
         );
 
         var vertexShaderSource = document.getElementById("2d-vertex-shader").text;
-        var fragmentShaderSource = document.getElementById("2d-fragment-shader").text;
-
         //Use the createShader function from the example above
         var vertexShader = createShader(gl, vertexShaderSource, gl.VERTEX_SHADER);
         //Use the createShader function from the example above

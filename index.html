@@ -36,13 +36,7 @@ void main() {
 gl_Position = vec4(a_position, 0, 1);
 }
 // ]]></script>
-     <script id="2d-fragment-shader" type="x-shader/x-fragment">
-      // <![CDATA[
-void main() {
-    gl_FragColor = vec4(gl_FragCoord.x /240., gl_FragCoord.y/180., 0, 1.0);
-}
-// ]]></script>
-   <script src="canvas-test.js">
+   <script src="shader-loader.js">
     </script>
     </body>
 </html>
