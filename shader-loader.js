@@ -1,19 +1,10 @@
-//https://blog.mayflower.de/4584-Playing-around-with-pixel-shaders-in-WebGL.html
 //remove to debug
 console.log = function() {}
-function createShader (gl, sourceCode, type) {
-    var shader = gl.createShader(type);
-    gl.shaderSource(shader, sourceCode);
-    gl.compileShader(shader);
-    console.log("compiling" + sourceCode);
-    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        var info = gl.getShaderInfoLog(shader);
-        throw "could not compile web gl shader. \n\n" + info;
-    }
-    return shader;
-}
+var gl,canvas, program,buffer;
+document.onload = loadshader();
 function loadshader() {
     var client = new XMLHttpRequest();
+
     //TODO: find a better alternative to find the list of shaders
     //pick a random shader
     let shader_list = ['pixel-shader0.glsl','pixel-shader1.glsl' ];
@@ -27,6 +18,17 @@ function loadshader() {
         init(pixelShader);
     };
     client.send();
+}
+function createShader (gl, sourceCode, type) {
+    var shader = gl.createShader(type);
+    gl.shaderSource(shader, sourceCode);
+    gl.compileShader(shader);
+    console.log("compiling" + sourceCode);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        var info = gl.getShaderInfoLog(shader);
+        throw "could not compile web gl shader. \n\n" + info;
+    }
+    return shader;
 }
 
 function init(fragmentShaderSource){
