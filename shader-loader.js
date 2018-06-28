@@ -64,14 +64,15 @@ function init(fragmentShaderSource){
             throw 'Could not compile WebGL program. \n\n' + info;
         }
         gl.useProgram(program);
-    render();
+        render(0);
     }
 }
 
 function render(seconds){
-    seconds *= seconds;
     window.requestAnimationFrame(render, canvas);
     var positionLocation = gl.getAttribLocation(program, "a_position");
+    var timeLocation = gl.getUniformLocation(program, "u_time");
+    gl.uniform1f(timeLocation, seconds);
     gl.enableVertexAttribArray(positionLocation);
     gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
