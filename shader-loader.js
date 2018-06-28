@@ -10,14 +10,17 @@ function createShader (gl, sourceCode, type) {
         var info = gl.getShaderInfoLog(shader);
         throw "could not compile web gl shader. \n\n" + info;
     }
-
     return shader;
 }
-var gl,program,canvas, buffer;
-document.onload=loadshader();
 function loadshader() {
     var client = new XMLHttpRequest();
-    client.open('GET', 'pixel-shaders/pixel-shader1.glsl');
+    //TODO: find a better alternative to find the list of shaders
+    //pick a random shader
+    let shader_list = ['pixel-shader0.glsl','pixel-shader1.glsl' ];
+    let val = Math.floor(Math.random() * shader_list.length);
+    console.log(shader_list[val]);
+    client.open('GET', 'pixel-shaders/'+ shader_list[val]);
+
     client.onreadystatechange = function() {
         console.log(client.responseText);
         pixelShader = client.responseText;
