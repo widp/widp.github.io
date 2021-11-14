@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-14 Sun 14:23 -->
+<!-- 2021-11-14 Sun 19:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ray tracing in a weekend in python</title>
@@ -34,7 +34,7 @@
     border: 1px solid #e6e6e6;
     border-radius: 3px;
     background-color: #f2f2f2;
-   padding: 8pt;
+    padding: 8pt;
     font-family: monospace;
     overflow: auto;
     margin: 1.2em;
@@ -218,183 +218,183 @@
 <body>
 <div id="content" class="content">
 <h1 class="title">Ray tracing in a weekend in python</h1>
-<div id="outline-container-org70beb30" class="outline-2">
-<h2 id="org70beb30"><span class="section-number-2">1.</span> From the book <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html#rays,asimplecamera,andbackground/sendingraysintothescene">Raytracing in a weekend</a></h2>
+<div id="outline-container-org550669f" class="outline-2">
+<h2 id="org550669f"><span class="section-number-2">1.</span> From the book <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html#rays,asimplecamera,andbackground/sendingraysintothescene">Raytracing in a weekend</a></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 code adapted to python
 </p>
 </div>
 </div>
-<div id="outline-container-org5540536" class="outline-2">
-<h2 id="org5540536"><span class="section-number-2">2.</span> emacs configuration</h2>
+<div id="outline-container-org8df90d5" class="outline-2">
+<h2 id="org8df90d5"><span class="section-number-2">2.</span> emacs configuration</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-elisp">(org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
-(setq org-src-preserve-indentation t)
+(<span style="color: #a020f0;">setq</span> org-src-preserve-indentation t)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org764c9ae" class="outline-2">
-<h2 id="org764c9ae"><span class="section-number-2">3.</span> helper functions</h2>
+<div id="outline-container-orgb5e5dfa" class="outline-2">
+<h2 id="orgb5e5dfa"><span class="section-number-2">3.</span> helper functions</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-python">from utilities import point3,color,ray,vec3
+<pre class="src src-python"><span style="color: #a020f0;">from</span> utilities <span style="color: #a020f0;">import</span> point3,color,ray,vec3
 
-import math
-def dot(vec1, vec2):
-    return (vec1.x * vec2.x + vec1.y * vec2.y  + vec1.z * vec2.z )
-import math
-def unit_vector(v):
-    length = math.sqrt(v.x**2+ v.y**2+ v.z**2) 
-    return vec3(v.x/length, v.y/length, v.z/length)
+<span style="color: #a020f0;">import</span> math
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">dot</span>(vec1, vec2):
+    <span style="color: #a020f0;">return</span> (vec1.x * vec2.x + vec1.y * vec2.y  + vec1.z * vec2.z )
+<span style="color: #a020f0;">import</span> math
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">unit_vector</span>(v):
+    <span style="color: #a0522d;">length</span> = math.sqrt(v.x**2+ v.y**2+ v.z**2) 
+    <span style="color: #a020f0;">return</span> vec3(v.x/length, v.y/length, v.z/length)
 
-def ray_color(r):
-    t = hit_sphere(point3(0,0, -1), 0.5, r)
-    if( t &gt; 0.0):
-	N = unit_vector(r.at(t) - vec3(0,0,-1))
-	res = vec3(N.x + 1, N.y + 1, N.z + 1) * 0.5
-	return res
-    unit_direction = unit_vector(r.dir)
-    t = 0.5* (unit_direction.y + 1.0)
-    return color(1.0,1.0,1.0)* (1.0-t) + color(0.5,0.7,1.0) * t 
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">ray_color</span>(r):
+    <span style="color: #a0522d;">t</span> = hit_sphere(point3(0,0, -1), 0.5, r)
+    <span style="color: #a020f0;">if</span>( t &gt; 0.0):
+        <span style="color: #a0522d;">N</span> = unit_vector(r.at(t) - vec3(0,0,-1))
+        <span style="color: #a0522d;">res</span> = vec3(N.x + 1, N.y + 1, N.z + 1) * 0.5
+        <span style="color: #a020f0;">return</span> res
+    <span style="color: #a0522d;">unit_direction</span> = unit_vector(r.<span style="color: #483d8b;">dir</span>)
+    <span style="color: #a0522d;">t</span> = 0.5* (unit_direction.y + 1.0)
+    <span style="color: #a020f0;">return</span> color(1.0,1.0,1.0)* (1.0-t) + color(0.5,0.7,1.0) * t 
 
-def write_color(ppm,pixel_color):
-    #translate 0,255
-    ir = int(255* pixel_color.x)
-    ig = int(255* pixel_color.y)
-    ib = int(255* pixel_color.z)
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">write_color</span>(ppm,pixel_color):
+    <span style="color: #b22222;">#</span><span style="color: #b22222;">translate 0,255</span>
+    <span style="color: #a0522d;">ir</span> = <span style="color: #483d8b;">int</span>(255* pixel_color.x)
+    <span style="color: #a0522d;">ig</span> = <span style="color: #483d8b;">int</span>(255* pixel_color.y)
+    <span style="color: #a0522d;">ib</span> = <span style="color: #483d8b;">int</span>(255* pixel_color.z)
 
-    ppm.write(str(ir) + " " + str(ig) + " " + str(ib)+ "\n")
-def hit_sphere(center, radius, r):
-    oc = r.orig - center
-    a = dot(r.dir, r.dir)
-    b = 2.0 * dot(oc, r.dir)
-    c = dot(oc, oc) - (radius * radius)
-    discrim = b*b - 4*a*c
-    if(discrim &lt; 0):
-	return -1.0
-    else:
-	return (-b - math.sqrt(discrim)) / (2.0 *a)
+    ppm.write(<span style="color: #483d8b;">str</span>(ir) + <span style="color: #8b2252;">" "</span> + <span style="color: #483d8b;">str</span>(ig) + <span style="color: #8b2252;">" "</span> + <span style="color: #483d8b;">str</span>(ib)+ <span style="color: #8b2252;">"\n"</span>)
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">hit_sphere</span>(center, radius, r):
+    <span style="color: #a0522d;">oc</span> = r.orig - center
+    <span style="color: #a0522d;">a</span> = dot(r.<span style="color: #483d8b;">dir</span>, r.<span style="color: #483d8b;">dir</span>)
+    <span style="color: #a0522d;">b</span> = 2.0 * dot(oc, r.<span style="color: #483d8b;">dir</span>)
+    <span style="color: #a0522d;">c</span> = dot(oc, oc) - (radius * radius)
+    <span style="color: #a0522d;">discrim</span> = b*b - 4*a*c
+    <span style="color: #a020f0;">if</span>(discrim &lt; 0):
+        <span style="color: #a020f0;">return</span> -1.0
+    <span style="color: #a020f0;">else</span>:
+        <span style="color: #a020f0;">return</span> (-b - math.sqrt(discrim)) / (2.0 *a)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org8202d7a" class="outline-2">
-<h2 id="org8202d7a"><span class="section-number-2">4.</span> main function</h2>
+<div id="outline-container-orgcc20362" class="outline-2">
+<h2 id="orgcc20362"><span class="section-number-2">4.</span> main function</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
-<pre class="src src-python">#P3 : colors are in ascii
-#width and height
-# max value
-aspect_ratio = 16.0/9.0
-image_width = 400
-image_height= int(image_width / aspect_ratio)
+<pre class="src src-python"><span style="color: #b22222;">#</span><span style="color: #b22222;">P3 : colors are in ascii</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">width and height</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">max value</span>
+<span style="color: #a0522d;">aspect_ratio</span> = 16.0/9.0
+<span style="color: #a0522d;">image_width</span> = 400
+<span style="color: #a0522d;">image_height</span>= <span style="color: #483d8b;">int</span>(image_width / aspect_ratio)
 
-#camera
-viewport_height = 2.0
-viewport_width = aspect_ratio * viewport_height
-focal_length = 1.0
+<span style="color: #b22222;">#</span><span style="color: #b22222;">camera</span>
+<span style="color: #a0522d;">viewport_height</span> = 2.0
+<span style="color: #a0522d;">viewport_width</span> = aspect_ratio * viewport_height
+<span style="color: #a0522d;">focal_length</span> = 1.0
 
-origin = point3(0,0,0)
-horizontal = vec3(viewport_width, 0,0)
-vertical = vec3(0, viewport_height, 0)
-lower_left_corner = origin - (horizontal/2) - (vertical/2) - vec3(0,0,focal_length)
+<span style="color: #a0522d;">origin</span> = point3(0,0,0)
+<span style="color: #a0522d;">horizontal</span> = vec3(viewport_width, 0,0)
+<span style="color: #a0522d;">vertical</span> = vec3(0, viewport_height, 0)
+<span style="color: #a0522d;">lower_left_corner</span> = origin - (horizontal/2) - (vertical/2) - vec3(0,0,focal_length)
 
-header = "P3\n"+ str(image_width)+ " "+str(image_height)+"\n255\n"
-with open('result.ppm', 'w') as ppm:
+<span style="color: #a0522d;">header</span> = <span style="color: #8b2252;">"P3\n"</span>+ <span style="color: #483d8b;">str</span>(image_width)+ <span style="color: #8b2252;">" "</span>+<span style="color: #483d8b;">str</span>(image_height)+<span style="color: #8b2252;">"\n255\n"</span>
+<span style="color: #a020f0;">with</span> <span style="color: #483d8b;">open</span>(<span style="color: #8b2252;">'result.ppm'</span>, <span style="color: #8b2252;">'w'</span>) <span style="color: #a020f0;">as</span> ppm:
     ppm.write(header)
-    for j in range(image_height,-1 ,-1):
-	print("scanlines remaining "+ str(j) + "\n")
-	for i in range(image_width):
-	    u = float(i)/(image_width - 1)
-	    v = float(j)/(image_height- 1)
-	    vecu = vec3(horizontal.x * u , horizontal.y * u , horizontal.z * u)
-	    vecv = vec3(vertical.x * v ,vertical.y * v ,vertical.z * v)
+    <span style="color: #a020f0;">for</span> j <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">range</span>(image_height,-1 ,-1):
+        <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"scanlines remaining "</span>+ <span style="color: #483d8b;">str</span>(j) + <span style="color: #8b2252;">"\n"</span>)
+        <span style="color: #a020f0;">for</span> i <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">range</span>(image_width):
+            <span style="color: #a0522d;">u</span> = <span style="color: #483d8b;">float</span>(i)/(image_width - 1)
+            <span style="color: #a0522d;">v</span> = <span style="color: #483d8b;">float</span>(j)/(image_height- 1)
+            <span style="color: #a0522d;">vecu</span> = vec3(horizontal.x * u , horizontal.y * u , horizontal.z * u)
+            <span style="color: #a0522d;">vecv</span> = vec3(vertical.x * v ,vertical.y * v ,vertical.z * v)
 
-	    r = ray(origin, lower_left_corner + vecu+ vecv- origin)
-	    pixel_color = ray_color(r)
-	    write_color(ppm, pixel_color)
+            <span style="color: #a0522d;">r</span> = ray(origin, lower_left_corner + vecu+ vecv- origin)
+            <span style="color: #a0522d;">pixel_color</span> = ray_color(r)
+            write_color(ppm, pixel_color)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfc0d2ae" class="outline-2">
-<h2 id="orgfc0d2ae"><span class="section-number-2">5.</span> write the utility classes</h2>
+<div id="outline-container-org11835f8" class="outline-2">
+<h2 id="org11835f8"><span class="section-number-2">5.</span> write the utility classes</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
-<pre class="src src-python">import vector
-class vec3:
-   def __init__(self,x,y,z):
-	self.x =x
-	self.y = y
-	self.z = z
-   def __add__(self, vec2):
-	return vec3(self.x + vec2.x, self.y + vec2.y ,self.z  + vec2.z)
-   def __sub__(self, vec2):
-	return vec3(self.x - vec2.x, self.y - vec2.y ,self.z  - vec2.z)
-   def __mul__(self, scalar):
-	return vec3(scalar*self.x,scalar*self.y,scalar*self.z)
-   def __truediv__(self, scalar ):
-	return vec3(self.x/scalar,self.y/scalar,self.z/scalar)
-   def __floordiv__(self, scalar):
-	return vec3(self.x/scalar,self.y/scalar,self.z/scalar)
+<pre class="src src-python"><span style="color: #a020f0;">import</span> vector
+<span style="color: #a020f0;">class</span> <span style="color: #228b22;">vec3</span>:
+   <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__init__</span>(<span style="color: #a020f0;">self</span>,x,y,z):
+        <span style="color: #a020f0;">self</span>.x =x
+        <span style="color: #a020f0;">self</span>.y = y
+        <span style="color: #a020f0;">self</span>.z = z
+   <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__add__</span>(<span style="color: #a020f0;">self</span>, vec2):
+        <span style="color: #a020f0;">return</span> vec3(<span style="color: #a020f0;">self</span>.x + vec2.x, <span style="color: #a020f0;">self</span>.y + vec2.y ,<span style="color: #a020f0;">self</span>.z  + vec2.z)
+   <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__sub__</span>(<span style="color: #a020f0;">self</span>, vec2):
+        <span style="color: #a020f0;">return</span> vec3(<span style="color: #a020f0;">self</span>.x - vec2.x, <span style="color: #a020f0;">self</span>.y - vec2.y ,<span style="color: #a020f0;">self</span>.z  - vec2.z)
+   <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__mul__</span>(<span style="color: #a020f0;">self</span>, scalar):
+        <span style="color: #a020f0;">return</span> vec3(scalar*<span style="color: #a020f0;">self</span>.x,scalar*<span style="color: #a020f0;">self</span>.y,scalar*<span style="color: #a020f0;">self</span>.z)
+   <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__truediv__</span>(<span style="color: #a020f0;">self</span>, scalar ):
+        <span style="color: #a020f0;">return</span> vec3(<span style="color: #a020f0;">self</span>.x/scalar,<span style="color: #a020f0;">self</span>.y/scalar,<span style="color: #a020f0;">self</span>.z/scalar)
+   <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__floordiv__</span>(<span style="color: #a020f0;">self</span>, scalar):
+        <span style="color: #a020f0;">return</span> vec3(<span style="color: #a020f0;">self</span>.x/scalar,<span style="color: #a020f0;">self</span>.y/scalar,<span style="color: #a020f0;">self</span>.z/scalar)
 
 
 
-class ray:
-    def __init__ (self, origin, direction):
-	self.orig = vec3(origin.x, origin.y , origin.z)
-	self.dir = vec3(direction.x,direction.y , direction.z)
+<span style="color: #a020f0;">class</span> <span style="color: #228b22;">ray</span>:
+    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__init__</span> (<span style="color: #a020f0;">self</span>, origin, direction):
+        <span style="color: #a020f0;">self</span>.orig = vec3(origin.x, origin.y , origin.z)
+        <span style="color: #a020f0;">self</span>.<span style="color: #483d8b;">dir</span> = vec3(direction.x,direction.y , direction.z)
 
-    def at(self,t):
-	return self.orig +  (self.dir * t)
-point3 = vec3
-color = vec3
+    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">at</span>(<span style="color: #a020f0;">self</span>,t):
+        <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">self</span>.orig +  (<span style="color: #a020f0;">self</span>.<span style="color: #483d8b;">dir</span> * t)
+<span style="color: #a0522d;">point3</span> = vec3
+<span style="color: #a0522d;">color</span> = vec3
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga3b30d9" class="outline-2">
-<h2 id="orga3b30d9"><span class="section-number-2">6.</span> render blue to white gradient</h2>
+<div id="outline-container-org6f5e3cb" class="outline-2">
+<h2 id="org6f5e3cb"><span class="section-number-2">6.</span> render blue to white gradient</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgee96ff3" class="outline-3">
-<h3 id="orgee96ff3"><span class="section-number-3">6.1.</span> start from <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html#rays,asimplecamera,andbackground/sendingraysintothescene">sending rays into the scene</a></h3>
+<div id="outline-container-orgc6d84eb" class="outline-3">
+<h3 id="orgc6d84eb"><span class="section-number-3">6.1.</span> start from <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html#rays,asimplecamera,andbackground/sendingraysintothescene">sending rays into the scene</a></h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 not really sure how I did that, all I did was write utility methods 
 </p>
 </div>
 </div>
-<div id="outline-container-org041c039" class="outline-3">
-<h3 id="org041c039"><span class="section-number-3">6.2.</span> understood python's operator overloading a little bit</h3>
+<div id="outline-container-org11d02f2" class="outline-3">
+<h3 id="org11d02f2"><span class="section-number-3">6.2.</span> understood python's operator overloading a little bit</h3>
 <div class="outline-text-3" id="text-6-2">
 
-<div id="org4bc1832" class="figure">
+<div id="org0afc6c8" class="figure">
 <p><img src="blue_gradient.jpg" alt="blue_gradient.jpg" />
 </p>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf175b65" class="outline-2">
-<h2 id="orgf175b65"><span class="section-number-2">7.</span> render a sphere</h2>
+<div id="outline-container-org57f86af" class="outline-2">
+<h2 id="org57f86af"><span class="section-number-2">7.</span> render a sphere</h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li>only 2 methods need to be changed
 \(hit\_sphere\ and\ ray\_color\)</li>
 </ul>
 </div>
-<div id="outline-container-org14d9bd8" class="outline-3">
-<h3 id="org14d9bd8"><span class="section-number-3">7.1.</span> <span class="done DONE">DONE</span> fix bug there are only red scan lines</h3>
+<div id="outline-container-orgba47489" class="outline-3">
+<h3 id="orgba47489"><span class="section-number-3">7.1.</span> <span class="done DONE">DONE</span> fix bug there are only red scan lines</h3>
 <div class="outline-text-3" id="text-7-1">
 
-<div id="orgffe8184" class="figure">
+<div id="orgf1cd3de" class="figure">
 <p><img src="sphere.jpg" alt="sphere.jpg" />
 </p>
 </div>
@@ -402,26 +402,26 @@ not really sure how I did that, all I did was write utility methods
 </div>
 </div>
 
-<div id="outline-container-org54e145b" class="outline-2">
-<h2 id="org54e145b"><span class="section-number-2">8.</span> Shading with surface normals</h2>
+<div id="outline-container-orgf09afae" class="outline-2">
+<h2 id="orgf09afae"><span class="section-number-2">8.</span> Shading with surface normals</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li>how are the normals computed
 \(hitpoint - center\)</li>
 </ul>
 
-<div id="org65c05c4" class="figure">
+<div id="orgd0bd177" class="figure">
 <p><img src="sphere_with_normals.jpg" alt="sphere_with_normals.jpg" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org4485568" class="outline-2">
-<h2 id="org4485568"><span class="section-number-2">9.</span> <span class="todo TODO">TODO</span> materials</h2>
+<div id="outline-container-org8b03312" class="outline-2">
+<h2 id="org8b03312"><span class="section-number-2">9.</span> <span class="todo TODO">TODO</span> materials</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-org86f1bf8" class="outline-3">
-<h3 id="org86f1bf8"><span class="section-number-3">9.1.</span> diffuse materials</h3>
+<div id="outline-container-org613ac23" class="outline-3">
+<h3 id="org613ac23"><span class="section-number-3">9.1.</span> diffuse materials</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 has something to do with reflection and refraction 
@@ -429,20 +429,20 @@ and how diffuse materials behave wrt above
 </p>
 </div>
 </div>
-<div id="outline-container-orgff21b52" class="outline-3">
-<h3 id="orgff21b52"><span class="section-number-3">9.2.</span> lambertian materials</h3>
+<div id="outline-container-orgeafd33d" class="outline-3">
+<h3 id="orgeafd33d"><span class="section-number-3">9.2.</span> lambertian materials</h3>
 </div>
-<div id="outline-container-orgd01dded" class="outline-3">
-<h3 id="orgd01dded"><span class="section-number-3">9.3.</span> metal</h3>
+<div id="outline-container-orgefe87c6" class="outline-3">
+<h3 id="orgefe87c6"><span class="section-number-3">9.3.</span> metal</h3>
 </div>
 </div>
-<div id="outline-container-org00c50b4" class="outline-2">
-<h2 id="org00c50b4"><span class="section-number-2">10.</span> <span class="todo TODO">TODO</span> reflection and refraction</h2>
+<div id="outline-container-org769c741" class="outline-2">
+<h2 id="org769c741"><span class="section-number-2">10.</span> <span class="todo TODO">TODO</span> reflection and refraction</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Tejaswi D Prakash</p>
-<p class="date">Created: 2021-11-14 Sun 14:23</p>
+<p class="date">Created: 2021-11-14 Sun 19:11</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
