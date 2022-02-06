@@ -7,7 +7,8 @@ function loadshader() {
 
     //TODO: find a better alternative to find the list of shaders
     //pick a random shader
-    let shader_list = ['pixel-shader0.glsl','pixel-shader1.glsl', 'pipes.glsl', 'mini-explosions.glsl'];
+    let shader_list = ['pixel-shader0.glsl','pixel-shader1.glsl', 'pipes.glsl', 'mini-explosions.glsl', 'sun-math.glsl'];
+    //let shader_list = ['lines.glsl'];
     let val = Math.floor(Math.random() * shader_list.length);
     console.log(shader_list[val]);
     client.open('GET', 'pixel-shaders/'+ shader_list[val]);
