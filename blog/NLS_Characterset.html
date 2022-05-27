@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-05-27 Fri 20:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NVARCHAR and NCHAR in oracle</title>
+<meta name="author" content="Tejaswi D Prakash" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">NVARCHAR and NCHAR in oracle</h1>
+<p>
+Oracle supports multiple charactersets at the same time through its use of
+the NLS* paramters.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #a020f0;">select</span> *
+<span style="color: #a020f0;">from</span> nls_database_parameters
+<span style="color: #a020f0;">where</span> <span style="color: #a020f0;">parameter</span> <span style="color: #a020f0;">in</span> (<span style="color: #8b2252;">'NLS_LENGTH_SEMANTICS'</span>,
+                    <span style="color: #8b2252;">'NLS_CHARACTERSET'</span>,
+                    <span style="color: #8b2252;">'NLS_NCHAR_CHARACTERSET'</span>);
+</pre>
+</div>
+
+<p>
+There are two things to note
+</p>
+<ol class="org-ol">
+<li>The value of NLS_CHARACTERSET</li>
+<li>The value of NLS_NCHAR_CHARACTERSET</li>
+</ol>
+
+<p>
+on my system the values are the following
+</p>
+
+
+<p>
+NLS_NCHAR_CHARACTERSET = AL16UTF16
+</p>
+
+<p>
+NLS_CHARACTERSET = WE8ISO8859P1
+</p>
+
+<p>
+If you haven't already guessed from the title of this article,
+NVARCHAR and NCHAR are two additional data types which behave
+similar to VARCHAR and CHAR.
+This means we could have a table with schema like the following
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #a020f0;">create</span> <span style="color: #a020f0;">table</span> <span style="color: #0000ff;">mytable</span>
+(
+    A nvarchar(20),
+    B <span style="color: #228b22;">varchar</span>(20),
+    C <span style="color: #228b22;">nchar</span>(20),
+    D <span style="color: #228b22;">char</span>(20)
+);
+</pre>
+</div>
+
+<p>
+   The difference is, while the characterset for varchar and char come
+from the value of NLS_CHARACTERSET , NVARCHAR and NCHAR derive their
+charactersets from the value of NLS_NCHAR_CHARACTERSET.
+Guess which one lets us use UTF?
+</p>
+
+
+<p>
+This additional characterset is particularly useful when you have
+an oracle DB without unicode support but want
+to add unicode support.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Tejaswi D Prakash</p>
+<p class="date">Created: 2022-05-27 Fri 20:40</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
