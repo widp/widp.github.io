@@ -58,7 +58,7 @@ function foo() {
     sound = new THREE.Audio(audiolistener);
     analyser = new THREE.AudioAnalyser(sound,32);
     var audioloader = new THREE.AudioLoader();
-    audioloader.load('assets/audio/bensound-scifi.mp3',function(buffer){
+    audioloader.load('assets/audio/yell_tinnu-Harsh_aVR.mp3',function(buffer){
         sound.setBuffer(buffer);
         sound.setLoop(false);
         sound.setVolume(0.5);
