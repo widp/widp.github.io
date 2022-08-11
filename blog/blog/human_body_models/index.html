@@ -5,13 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Initializing List with an array in Java | Tejaswi&#39;s blog</title>
-<meta name="keywords" content="java, programming">
-<meta name="description" content="Java lists">
+<title>Overview of Parametric Human Body Models | Tejaswi&#39;s blog</title>
+<meta name="keywords" content="Mocap">
+<meta name="description" content="Research related to parametric human body models">
 <meta name="author" content="Tejaswi D Prakash">
-<link rel="canonical" href="https://widp.github.io/blog/initializing_java_list/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f020557b488a2fb72e7f18127efec3559b5bb54332da4abe5f035b36e6194601.css" integrity="sha256-8CBVe0iKL7cufxgSfv7DVZtbtUMy2kq&#43;XwNbNuYZRgE=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<link rel="canonical" href="https://widp.github.io/blog/human_body_models/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f020557b488a2fb72e7f18127efec3559b5bb54332da4abe5f035b36e6194601.css" integrity="" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity=""
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://widp.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://widp.github.io/favicon-16x16.png">
@@ -57,16 +57,16 @@
 
     </style>
 </noscript>
-<meta property="og:title" content="Initializing List with an array in Java" />
-<meta property="og:description" content="Java lists" />
+<meta property="og:title" content="Overview of Parametric Human Body Models" />
+<meta property="og:description" content="Research related to parametric human body models" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://widp.github.io/blog/initializing_java_list/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-03-18T00:00:00&#43;05:30" />
-<meta property="article:modified_time" content="2022-03-18T00:00:00&#43;05:30" />
+<meta property="og:url" content="https://widp.github.io/blog/human_body_models/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-03-05T00:00:00&#43;05:30" />
+<meta property="article:modified_time" content="2022-03-05T00:00:00&#43;05:30" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Initializing List with an array in Java"/>
-<meta name="twitter:description" content="Java lists"/>
+<meta name="twitter:title" content="Overview of Parametric Human Body Models"/>
+<meta name="twitter:description" content="Research related to parametric human body models"/>
 
 
 <script type="application/ld+json">
@@ -83,8 +83,8 @@
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Initializing List with an array in Java",
-      "item": "https://widp.github.io/blog/initializing_java_list/"
+      "name": "Overview of Parametric Human Body Models",
+      "item": "https://widp.github.io/blog/human_body_models/"
     }
   ]
 }
@@ -93,24 +93,24 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Initializing List with an array in Java",
-  "name": "Initializing List with an array in Java",
-  "description": "Java lists",
+  "headline": "Overview of Parametric Human Body Models",
+  "name": "Overview of Parametric Human Body Models",
+  "description": "Research related to parametric human body models",
   "keywords": [
-    "java", "programming"
+    "Mocap"
   ],
-  "articleBody": "Initializing Lists Why is this\nList\u003cInteger\u003e a = new List\u003cInteger\u003e({1,2,3}) not possible?\nSimple workaround\nclass ListInit { public static void main(String args[]){ List\u003cInteger\u003e a = Arrays.asList(1,2,3); } } but,\nIs it not possible to initialize a List with an array literal?\nIt is!\nThat means Arrays.asList() should work with an array literal.\nBut the below doesn’t work.\nList\u003cInteger\u003e a = Arrays.asList({1,2,3}); Although this does with the ’new’ keyword.\nList\u003cInteger\u003e a = Arrays.asList(new Integer[] {1,2,3}) ",
-  "wordCount" : "74",
+  "articleBody": "Problem with anthropometric data see: CAESAR and ANSUR II\nThey all need to be licensed\nA good start to this would be check out the SMPL* body models first they have provided starter code for use with neural network libraries such as tensorflow/pytorch\nThis blog post describes how to use the code related to these models Overview of SMPL* models and methods This is from one of their youtube videos :\nsmplify-x This computes a body model using a single photo There is also PiFU-HD which does , but that is non-parametric\nConsequently, we follow the approach of SMPLify, which estimates 2D features and then optimizes model parameters to fit the features.\nthey use 2d features to optimize SMPL-X model parameters\n",
+  "wordCount" : "121",
   "inLanguage": "en",
-  "datePublished": "2022-03-18T00:00:00+05:30",
-  "dateModified": "2022-03-18T00:00:00+05:30",
+  "datePublished": "2022-03-05T00:00:00+05:30",
+  "dateModified": "2022-03-05T00:00:00+05:30",
   "author":[{
     "@type": "Person",
     "name": "Tejaswi D Prakash"
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://widp.github.io/blog/initializing_java_list/"
+    "@id": "https://widp.github.io/blog/human_body_models/"
   },
   "publisher": {
     "@type": "Organization",
@@ -178,41 +178,42 @@
   <header class="post-header">
     
     <h1 class="post-title">
-      Initializing List with an array in Java
+      Overview of Parametric Human Body Models
     </h1>
     <div class="post-description">
-      Java lists
+      Research related to parametric human body models
     </div>
-    <div class="post-meta"><span title='2022-03-18 00:00:00 +0530 IST'>March 18, 2022</span>&nbsp;·&nbsp;Tejaswi D Prakash
+    <div class="post-meta"><span title='2022-03-05 00:00:00 +0530 IST'>March 5, 2022</span>&nbsp;·&nbsp;Tejaswi D Prakash
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="initializing-lists">Initializing Lists<a hidden class="anchor" aria-hidden="true" href="#initializing-lists">#</a></h2>
-<p>Why is this</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;({</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>3<span style="color:#f92672">})</span>
-</span></span></code></pre></div><p>not possible?</p>
-<p>Simple workaround</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ListInit</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String args<span style="color:#f92672">[]){</span>
-</span></span><span style="display:flex;"><span>	List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>3<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>but,</p>
-<p><strong>Is it not possible to initialize a List with an array literal?</strong></p>
-<p>It is!</p>
-<p>That means Arrays.asList() should work with an array literal.</p>
-<p>But the below doesn&rsquo;t work.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">({</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>3<span style="color:#f92672">});</span>
-</span></span></code></pre></div><p>Although this does with the &rsquo;new&rsquo; keyword.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">[]</span> <span style="color:#f92672">{</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>3<span style="color:#f92672">})</span>
-</span></span></code></pre></div>
+  <div class="post-content"><h2 id="problem-with-anthropometric-data">Problem with anthropometric data<a hidden class="anchor" aria-hidden="true" href="#problem-with-anthropometric-data">#</a></h2>
+<p>see: <a href="https://graphics.soe.ucsc.edu/data/BodyModels/index.html">CAESAR</a> and <a href="https://www.openlab.psu.edu/ansur2/">ANSUR II</a></p>
+<p>They all need to be licensed</p>
+<h3 id="a-good-start-to-this-would-be">A good start to this would be<a hidden class="anchor" aria-hidden="true" href="#a-good-start-to-this-would-be">#</a></h3>
+<h4 id="check-out-the-smpl-body-models-first">check out the <a href="https://smpl.is.tue.mpg.de/">SMPL*</a> body models first<a hidden class="anchor" aria-hidden="true" href="#check-out-the-smpl-body-models-first">#</a></h4>
+<p>they have provided starter code for use with neural network libraries such as tensorflow/pytorch</p>
+<h4 id="this-blog-post-describes-how-to-use-the-code-related-to-these-models"><a href="https://khanhha.github.io/posts/SMPL-model-introduction/">This blog post describes how to use the code related to these models</a><a hidden class="anchor" aria-hidden="true" href="#this-blog-post-describes-how-to-use-the-code-related-to-these-models">#</a></h4>
+<h2 id="overview-of-smpl-models-and-methods">Overview of SMPL* models and methods<a hidden class="anchor" aria-hidden="true" href="#overview-of-smpl-models-and-methods">#</a></h2>
+<p>This is from one of their youtube videos :</p>
+<figure>
+    <img loading="lazy" src="/ox-hugo/body_model_overview.png"/> 
+</figure>
+
+<h2 id="smplify-x"><a href="https://github.com/vchoutas/smplify-x">smplify-x</a><a hidden class="anchor" aria-hidden="true" href="#smplify-x">#</a></h2>
+<h3 id="this-computes-a-body-model-using-a-single-photo">This computes a body model using a single photo<a hidden class="anchor" aria-hidden="true" href="#this-computes-a-body-model-using-a-single-photo">#</a></h3>
+<p>There is also <a href="https://shunsukesaito.github.io/PIFuHD/">PiFU-HD</a> which does , but that is non-parametric</p>
+<blockquote>
+<p>Consequently, we follow the approach of SMPLify, which estimates 2D features and then optimizes model parameters to fit the features.</p>
+</blockquote>
+<p>they use 2d features to optimize SMPL-X model parameters</p>
+
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://widp.github.io/tags/java/">java</a></li>
-      <li><a href="https://widp.github.io/tags/programming/">programming</a></li>
+      <li><a href="https://widp.github.io/tags/mocap/">Mocap</a></li>
     </ul>
   </footer>
 </article>
