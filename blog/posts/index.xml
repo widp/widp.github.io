@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Disabling SSL while using Git and pip</title>
+      <link>https://widp.github.io/blog/posts/ssl_errors_behind_proxy/</link>
+      <pubDate>Fri, 27 May 2022 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/ssl_errors_behind_proxy/</guid>
+      <description>How to use git and pip behind a corporate proxy</description>
+    </item>
+    
+    <item>
       <title>Nvarchar and Nchar oracle db</title>
       <link>https://widp.github.io/blog/posts/nvarchar/</link>
       <pubDate>Fri, 27 May 2022 00:00:00 +0530</pubDate>
