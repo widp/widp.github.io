@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>graphics on Tejaswi&#39;s blog</title>
+    <link>https://widp.github.io/blog/tags/graphics/</link>
+    <description>Recent content in graphics on Tejaswi&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/tags/graphics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ray tracing in a weekend in python</title>
+      <link>https://widp.github.io/blog/posts/ray_tracing_in_a_weekend/</link>
+      <pubDate>Sun, 14 Nov 2021 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/ray_tracing_in_a_weekend/</guid>
+      <description>adapting the code from the book &amp;#39;Raytracing in a weekend</description>
+    </item>
+    
+  </channel>
+</rss>
