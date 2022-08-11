@@ -99,7 +99,7 @@
   "keywords": [
     "programming", "git"
   ],
-  "articleBody": "The following approaches can be used to work with large git repositories. Limit large files from being downloaded. use filter:blob None So files such as large binaries, zip files won’t be downloaded.\n#size in MB git clone --no-checkout --filter=blob:limit= your_git_repo.com Limit git to a set of directories This can be done using git sparse checkout\n#inialize empty git repo mkdir your_git_dir; cd your_git_dir git init # set which sub-directory contents you want git sparse-checkout set --cone input-directory list #add remote and do a pull git remote add origin my_git_repo.com git pull origin master Limit the number of commits that will be cloned git with the –depth option can be used to limit the history to ’n’ recent commits\ngit clone --depth=10 your_git_repo.com ",
+  "articleBody": "The following approaches can be used to work with large git repositories. Limit large files from being downloaded. use filter:blob None\nSo files such as large binaries, zip files won’t be downloaded.\n#size in MB git clone --no-checkout --filter=blob:limit= your_git_repo.com Limit git to a set of directories\nThis can be done using git sparse checkout\n#inialize empty git repo mkdir your_git_dir; cd your_git_dir git init # set which sub-directory contents you want git sparse-checkout set --cone input-directory list #add remote and do a pull git remote add origin my_git_repo.com git pull origin master Limit the number of commits that will be cloned\ngit with the –depth option can be used to limit the history to ’n’ recent commits\ngit clone --depth=10 your_git_repo.com ",
   "wordCount" : "122",
   "inLanguage": "en",
   "datePublished": "2022-06-16T00:00:00+05:30",
@@ -191,14 +191,14 @@
 <ul>
 <li>
 <p>Limit large files from being downloaded.
-use filter:blob None
-So files such as large binaries, zip files won&rsquo;t be downloaded.</p>
+use filter:blob None</p>
+<p>So files such as large binaries, zip files won&rsquo;t be downloaded.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#size in MB</span>
 </span></span><span style="display:flex;"><span>git clone --no-checkout --filter<span style="color:#f92672">=</span>blob:limit<span style="color:#f92672">=</span>&lt;size&gt; your_git_repo.com
 </span></span></code></pre></div></li>
 <li>
-<p>Limit git to a set of directories
-This can be done using git sparse checkout</p>
+<p>Limit git to a set of directories</p>
+<p>This can be done using git sparse checkout</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#inialize empty git repo</span>
 </span></span><span style="display:flex;"><span>mkdir your_git_dir; cd your_git_dir
 </span></span><span style="display:flex;"><span>git init
@@ -210,8 +210,8 @@ This can be done using git sparse checkout</p>
 </span></span><span style="display:flex;"><span>git pull origin master
 </span></span></code></pre></div></li>
 <li>
-<p>Limit the number of commits that will be cloned
-git with the &ndash;depth option can be used to limit the history to &rsquo;n&rsquo; recent commits</p>
+<p>Limit the number of commits that will be cloned</p>
+<p>git with the &ndash;depth option can be used to limit the history to &rsquo;n&rsquo; recent commits</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> your_git_repo.com
 </span></span></code></pre></div></li>
 </ul>
