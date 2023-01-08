@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mocap on Tejaswi&#39;s blog</title>
     <link>https://widp.github.io/blog/tags/mocap/</link>
@@ -13,7 +13,10 @@
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0530</pubDate>
       
       <guid>https://widp.github.io/blog/posts/human_body_models/</guid>
-      <description>Research related to parametric human body models</description>
+      <description>Problem with anthropometric data see: CAESAR and ANSUR II
+They all need to be licensed
+A good start to this would be check out the SMPL* body models first they have provided starter code for use with neural network libraries such as tensorflow/pytorch
+This blog post describes how to use the code related to these models Overview of SMPL* models and methods This is from one of their youtube videos :</description>
     </item>
     
   </channel>

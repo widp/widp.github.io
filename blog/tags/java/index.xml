@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>java on Tejaswi&#39;s blog</title>
     <link>https://widp.github.io/blog/tags/java/</link>
@@ -13,7 +13,16 @@
       <pubDate>Fri, 18 Mar 2022 00:00:00 +0530</pubDate>
       
       <guid>https://widp.github.io/blog/posts/initializing_java_list/</guid>
-      <description>Java lists</description>
+      <description>Initializing Lists Why is this
+List&amp;lt;Integer&amp;gt; a = new List&amp;lt;Integer&amp;gt;({1,2,3}) not possible?
+Simple workaround
+class ListInit { public static void main(String args[]){ List&amp;lt;Integer&amp;gt; a = Arrays.asList(1,2,3); } } but,
+Is it not possible to initialize a List with an array literal?
+It is!
+That means Arrays.asList() should work with an array literal.
+But the below doesn&amp;rsquo;t work.
+List&amp;lt;Integer&amp;gt; a = Arrays.asList({1,2,3}); Although this does with the &amp;rsquo;new&amp;rsquo; keyword.
+List&amp;lt;Integer&amp;gt; a = Arrays.</description>
     </item>
     
   </channel>

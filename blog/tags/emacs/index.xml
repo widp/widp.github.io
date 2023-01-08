@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emacs on Tejaswi&#39;s blog</title>
+    <link>https://widp.github.io/blog/tags/emacs/</link>
+    <description>Recent content in emacs on Tejaswi&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Jan 2023 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Work Items And Org mode</title>
+      <link>https://widp.github.io/blog/posts/azure-work-items-org-mode/</link>
+      <pubDate>Thu, 05 Jan 2023 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/azure-work-items-org-mode/</guid>
+      <description>The following post is about viewing data from azure work items (ticket id, title etc..) and managing org notes by tagging them.
+Setting up az cli &amp;amp; az devops extension for az cli azure has a cli and for azure devops there is an extension .
+#after installing azure cli &amp;amp; cli devops extension #login az devops login Viewing tickets in org mode (using az wiql) This snippet does two things</description>
+    </item>
+    
+  </channel>
+</rss>

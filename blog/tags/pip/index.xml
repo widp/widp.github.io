@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pip on Tejaswi&#39;s blog</title>
     <link>https://widp.github.io/blog/tags/pip/</link>
@@ -13,7 +13,14 @@
       <pubDate>Sat, 16 Jul 2022 00:00:00 +0530</pubDate>
       
       <guid>https://widp.github.io/blog/posts/ssl_errors_behind_proxy/</guid>
-      <description>How to use git and pip behind a corporate proxy</description>
+      <description>SSL errors If you get errors like :
+unable to get local issuer certificate error
+or
+Failed to connect to github.com port 443 after 21380 ms: Timed out
+while using git OR
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by &amp;lsquo;ConnectTimeoutError
+while using pip , It could mean you are behind a corporate proxy. Behind tools such as ZScaler.
+A quick fix to this (although not the safest way) is to disable ssl for Git</description>
     </item>
     
   </channel>

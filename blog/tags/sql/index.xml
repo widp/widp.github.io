@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sql on Tejaswi&#39;s blog</title>
     <link>https://widp.github.io/blog/tags/sql/</link>
@@ -13,7 +13,12 @@
       <pubDate>Fri, 27 May 2022 00:00:00 +0530</pubDate>
       
       <guid>https://widp.github.io/blog/posts/nvarchar/</guid>
-      <description>alternative method of enabling utf</description>
+      <description>NVARCHAR and NCHAR in oracle Oracle supports multiple charactersets at the same time through its use of the NLS* paramters.
+select * from nls_database_parameters where parameter in (&amp;#39;NLS_LENGTH_SEMANTICS&amp;#39;, &amp;#39;NLS_CHARACTERSET&amp;#39;, &amp;#39;NLS_NCHAR_CHARACTERSET&amp;#39;); There are two things to note
+The value of NLS_CHARACTERSET The value of NLS_NCHAR_CHARACTERSET on my system the values are the following
+NLS_NCHAR_CHARACTERSET = AL16UTF16
+NLS_CHARACTERSET = WE8ISO8859P1
+If you haven&amp;rsquo;t already guessed from the title of this article, NVARCHAR and NCHAR are two additional data types which behave similar to VARCHAR and CHAR.</description>
     </item>
     
   </channel>

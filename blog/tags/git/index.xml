@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Tejaswi&#39;s blog</title>
     <link>https://widp.github.io/blog/tags/git/</link>
@@ -13,7 +13,14 @@
       <pubDate>Sat, 16 Jul 2022 00:00:00 +0530</pubDate>
       
       <guid>https://widp.github.io/blog/posts/ssl_errors_behind_proxy/</guid>
-      <description>How to use git and pip behind a corporate proxy</description>
+      <description>SSL errors If you get errors like :
+unable to get local issuer certificate error
+or
+Failed to connect to github.com port 443 after 21380 ms: Timed out
+while using git OR
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by &amp;lsquo;ConnectTimeoutError
+while using pip , It could mean you are behind a corporate proxy. Behind tools such as ZScaler.
+A quick fix to this (although not the safest way) is to disable ssl for Git</description>
     </item>
     
     <item>
@@ -22,7 +29,11 @@
       <pubDate>Thu, 16 Jun 2022 00:00:00 +0530</pubDate>
       
       <guid>https://widp.github.io/blog/posts/git_for_mono_repos/</guid>
-      <description>Working with Large Git repositories</description>
+      <description>The following approaches can be used to work with large git repositories. Limit large files from being downloaded.
+using &amp;lsquo;filter&amp;rsquo; So files such as large binaries, zip files won&amp;rsquo;t be downloaded.
+#size in MB git clone --no-checkout --filter=blob:limit=&amp;lt;size&amp;gt; your_git_repo.com Limit git to a set of directories
+This can be done using git &amp;lsquo;sparse checkout&amp;rsquo;
+#inialize empty git repo mkdir your_git_dir; cd your_git_dir git init # set which sub-directory contents you want git sparse-checkout set --cone input-directory #add remote and do a pull git remote add origin my_git_repo.</description>
     </item>
     
   </channel>
