@@ -98,8 +98,8 @@
   "keywords": [
     "programming", "emacs", "logs"
   ],
-  "articleBody": "log viewing What I tried\nLogview mode emacs Notepad++ Notepad++ supports ‘User Defined Languages’ for key word highlighting, folding etc.. Wrote a log search gui in tkinter Tried this first , until I discovered notepad++ has all of the features I added built into it.\nHow I wanted to go about it\nregular expression for the tokens and parsing for the log format turns out you don’t need that level of configuration See 1 timestamp tz LEVEL message etc.. Sample log file\ncom.org.class 2022-12-01 12:06:34 CET INFO Messages being logged to file: file.log methodname com.org.class 2022-12-01 12:06:34 CET INFO something happened . methodname com.org.class 2022-12-01 12:06:44 CET INFO methodname com.org.class 2022-12-01 12:06:44 CET INFO Processed in 10 secs. methodname com.org.class 2022-12-01 12:06:44 CET INFO methodname com.org.class 2022-12-01 12:06:44 CET INFO Completed------------------------------ methodname Features I wanted\nHighlighting Notepad++ ‘User defined language’ can be configured for keywords highlighting Logview mode in emacs configuration '(datetime-timezone 'Asia/Kolkata) '(logview-additional-submodes '((\"MYLOGS\" (format . \"NAME TIMESTAMP IGNORED LEVEL MESSAGE\") (levels . \"JUL\") (timestamp) (aliases)))) Filtering based on the different fields\nNotepad++ standard Notepad++ search\nEmacs logview mode has keybindings and functions to filter by each of the above fields (Message , level etc..)\nfolding Notepad++ folds can be defined for START and END keywords for a User definied language\nStill trying to figure out folding in emacs Although hideshow does a decent job, it doesn’t have the ‘fringe’ [+] [-] to expand and collapse\ntailing logs on Notepad++ ‘monitoring mode’ is built in, but this doesn’t seem to work for me (likely because logs are on network drive) Emacs has auto-revert-tail-mode but has the same issue\n",
-  "wordCount" : "269",
+  "articleBody": "log viewing What I tried Logview mode emacs\nNotepad++\nNotepad++ supports ‘User Defined Languages’ for key word highlighting, folding etc..\nWrote a log search gui in tkinter\nTried this first , until I discovered notepad++ has all of the features I added built into it.\nHow I wanted to go about it Regular expression for the tokens and parsing for the log format Turns out you don’t need that level of configuration See 1 timestamp tz LEVEL message etc.. Sample log file\ncom.org.class 2022-12-01 12:06:34 CET INFO Messages being logged to file: file.log methodname com.org.class 2022-12-01 12:06:34 CET INFO something happened . methodname com.org.class 2022-12-01 12:06:44 CET INFO methodname com.org.class 2022-12-01 12:06:44 CET INFO Processed in 10 secs. methodname com.org.class 2022-12-01 12:06:44 CET INFO methodname com.org.class 2022-12-01 12:06:44 CET INFO Completed------------------------------ methodname Features I wanted Highlighting\nIn Notepad++ ‘User defined language’ can be configured for keywords highlighting.\nLogview mode in emacs has better highlighting with simple configuration. '(datetime-timezone 'Asia/Kolkata) '(logview-additional-submodes '((\"MYLOGS\" (format . \"NAME TIMESTAMP IGNORED LEVEL MESSAGE\") (levels . \"JUL\") (timestamp) (aliases)))) Filtering based on the different fields\nIn Notepad++ the standard search interface is decent, but not as flexible as logview-mode.\nLogview mode in emacs has keybindings and functions to filter by each of the above fields (Message , level etc..).\nFolding\nNotepad++ folds can be defined for START and END keywords for a User definied language.\nStill trying to figure out folding in emacs. Although hideshow does a decent job, it doesn’t have the ‘fringe’ [+] [-] to expand and collapse.\nTailing Logs\nNotepad++ has a ‘monitoring mode’ which is built in, but this doesn’t seem to work for me, likely because logs are on a network drive.\nEmacs has auto-revert-tail-mode but has the same issue.\n",
+  "wordCount" : "289",
   "inLanguage": "en",
   "datePublished": "2023-01-04T00:00:00+05:30",
   "dateModified": "2023-01-04T00:00:00+05:30",
@@ -187,18 +187,24 @@
 </div>
   </header> 
   <div class="post-content"><h2 id="log-viewing">log viewing<a hidden class="anchor" aria-hidden="true" href="#log-viewing">#</a></h2>
-<p>What I tried</p>
+<h3 id="what-i-tried">What I tried<a hidden class="anchor" aria-hidden="true" href="#what-i-tried">#</a></h3>
 <ol>
-<li><a href="https://github.com/doublep/logview">Logview  mode</a> emacs</li>
-<li>Notepad++
-Notepad++ supports &lsquo;User Defined Languages&rsquo; for key word highlighting, folding etc..</li>
-<li>Wrote a log search gui in tkinter</li>
-</ol>
+<li>
+<p><a href="https://github.com/doublep/logview">Logview  mode</a> emacs</p>
+</li>
+<li>
+<p>Notepad++</p>
+<p>Notepad++ supports &lsquo;User Defined Languages&rsquo; for key word highlighting, folding etc..</p>
+</li>
+<li>
+<p>Wrote a log search gui in tkinter</p>
 <p>Tried this first , until I discovered notepad++ has all of the features I added built into it.</p>
-<p>How I wanted to go about it</p>
+</li>
+</ol>
+<h3 id="how-i-wanted-to-go-about-it">How I wanted to go about it<a hidden class="anchor" aria-hidden="true" href="#how-i-wanted-to-go-about-it">#</a></h3>
 <ul>
-<li>regular expression for the tokens and parsing for the log format
-turns out you don&rsquo;t need that level of configuration
+<li>Regular expression for the tokens and parsing for the log format
+Turns out you don&rsquo;t need that level of configuration
 See <a href="#code-snippet--logview-mode">1</a> timestamp tz LEVEL message etc..</li>
 </ul>
 <p>Sample log file</p>
@@ -208,25 +214,17 @@ See <a href="#code-snippet--logview-mode">1</a> timestamp tz LEVEL message etc..
 </span></span><span style="display:flex;"><span>com.org.class   2022-12-01 12:06:44 CET   INFO     Processed in 10 secs.                                                                                                                                                                                     methodname
 </span></span><span style="display:flex;"><span>com.org.class   2022-12-01 12:06:44 CET   INFO                                                                                                                                                                                                               methodname
 </span></span><span style="display:flex;"><span>com.org.class   2022-12-01 12:06:44 CET   INFO     Completed------------------------------                                                                                                                                                                   methodname
-</span></span></code></pre></div><p>Features I wanted</p>
+</span></span></code></pre></div><h3 id="features-i-wanted">Features I wanted<a hidden class="anchor" aria-hidden="true" href="#features-i-wanted">#</a></h3>
 <ol>
-<li>Highlighting
-<ul>
-<li>Notepad++
-&lsquo;User defined language&rsquo; can be configured for keywords highlighting</li>
-</ul>
-</li>
-</ol>
+<li>
+<p>Highlighting</p>
+<p>In Notepad++ &lsquo;User defined language&rsquo; can be configured for keywords highlighting.</p>
 <figure>
-    <img loading="lazy" src="../../ox-hugo/2023-01-13_13-12-29_2023-01-13%2013_11_59-__nlamevs003-pub.europe.shell.com_share1_endurdata_USERS_Tejas%20-%20__Remote.png"/> 
-</figure>
+        <img loading="lazy" src="../../ox-hugo/2023-01-13_13-12-29_2023-01-13%2013_11_59-__nlamevs003-pub.europe.shell.com_share1_endurdata_USERS_Tejas%20-%20__Remote.png"/> 
+    </figure>
 
-<ul>
-<li>Logview mode in emacs
-configuration</li>
-</ul>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Logview mode in emacs has better highlighting with simple configuration.
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span><span style="color:#f92672">&#39;</span>(datetime-timezone <span style="color:#e6db74">&#39;Asia/Kolkata</span>)
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&#39;</span>(logview-additional-submodes
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;MYLOGS&#34;</span>
@@ -235,36 +233,27 @@ configuration</li>
 </span></span><span style="display:flex;"><span>     (timestamp)
 </span></span><span style="display:flex;"><span>     (aliases))))
 </span></span></code></pre></div><figure>
-    <img loading="lazy" src="../../ox-hugo/2023-01-13_16-17-04_2023-01-13%2013_17_19-delete.log.png"/> 
-</figure>
+        <img loading="lazy" src="../../ox-hugo/2023-01-13_16-17-04_2023-01-13%2013_17_19-delete.log.png"/> 
+    </figure>
 
-<ol>
+</li>
 <li>
 <p>Filtering based on the different fields</p>
-<ul>
-<li>Notepad++</li>
-</ul>
-<p>standard Notepad++ search</p>
-<ul>
-<li>Emacs</li>
-</ul>
-<p>logview mode has keybindings and functions to filter by each of the above fields
-(Message , level etc..)</p>
-</li>
-</ol>
-<!-- raw HTML omitted -->
-<ol>
-<li>
-<p>folding
-Notepad++ folds can be defined for START and END keywords for a User definied language</p>
-<p>Still trying to figure out folding in emacs
-Although hideshow does a decent job, it doesn&rsquo;t have the &lsquo;fringe&rsquo; [+] [-] to expand and collapse</p>
+<p>In Notepad++ the standard search interface is decent, but not as flexible as logview-mode.</p>
+<p>Logview mode in emacs has keybindings and functions to filter by each of the above fields
+(Message , level etc..).</p>
 </li>
 <li>
-<p>tailing logs
-on Notepad++ &lsquo;monitoring mode&rsquo; is built in, but this doesn&rsquo;t seem to work
-for me (likely because logs are on network drive)
-Emacs has auto-revert-tail-mode but has the same issue</p>
+<p>Folding</p>
+<p>Notepad++ folds can be defined for START and END keywords for a User definied language.</p>
+<p>Still trying to figure out folding in emacs.
+Although hideshow does a decent job, it doesn&rsquo;t have the &lsquo;fringe&rsquo; [+] [-] to expand and collapse.</p>
+</li>
+<li>
+<p>Tailing Logs</p>
+<p>Notepad++ has a &lsquo;monitoring mode&rsquo; which is built in, but this doesn&rsquo;t seem to work
+for me, likely because logs are on a network drive.</p>
+<p>Emacs has auto-revert-tail-mode but has the same issue.</p>
 </li>
 </ol>
 
