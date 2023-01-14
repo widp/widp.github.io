@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Thoughts on Viewing Logs</title>
+      <link>https://widp.github.io/blog/posts/viewing_logs/</link>
+      <pubDate>Wed, 04 Jan 2023 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/viewing_logs/</guid>
+      <description>Viewing Logs And Log Viewers</description>
+    </item>
+    
+    <item>
       <title>Disabling SSL while using Git and pip</title>
       <link>https://widp.github.io/blog/posts/ssl_errors_behind_proxy/</link>
       <pubDate>Sat, 16 Jul 2022 00:00:00 +0530</pubDate>
