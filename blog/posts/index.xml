@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Tejaswi&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Jan 2023 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Jan 2023 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scoring functions for breaking cryptopals ciphers</title>
+      <link>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</link>
+      <pubDate>Thu, 26 Jan 2023 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</guid>
+      <description>Scoring functions I tried for breaking set 1 challenge 6 from cryptopals</description>
+    </item>
+    
     <item>
       <title>Azure Work Items And Org mode</title>
       <link>https://widp.github.io/blog/posts/azure-work-items-org-mode/</link>

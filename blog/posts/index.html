@@ -139,6 +139,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Scoring functions for breaking cryptopals ciphers
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The problem is to find a scoring function. A function which assigns a number to the likeliness of a message to be english.
+What I tried for the score computing function Most of them based on ‘ETAOIN SHRDLU’ (frequency analysis)
+Position based weighting (higher score is better) def scorecompute(msg): score = 0 positions = &#39;ETAOIN SHRDLU&#39; for i in positions: weight = len(positions) - positions.find(i) score &#43;= msg.upper().count(i) * weight return score doesn’t work so well From this point on higher scores are worse....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-01-26 00:00:00 +0530 IST'>January 26, 2023</span>&nbsp;·&nbsp;Tejaswi D Prakash</footer>
+  <a class="entry-link" aria-label="post link to Scoring functions for breaking cryptopals ciphers" href="https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Azure Work Items And Org mode
     </h2>
   </header>
