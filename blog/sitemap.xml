@@ -2,10 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://widp.github.io/blog/tags/cryptopals/</loc>
-    <lastmod>2023-01-26T00:00:00+05:30</lastmod>
+    <loc>https://widp.github.io/blog/tags/math/</loc>
+    <lastmod>2023-06-18T00:00:00+05:30</lastmod>
   </url><url>
     <loc>https://widp.github.io/blog/posts/</loc>
+    <lastmod>2023-06-18T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/posts/sampling_and_confidence_intervals/</loc>
+    <lastmod>2023-06-18T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/tags/statistics/</loc>
+    <lastmod>2023-06-18T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/tags/</loc>
+    <lastmod>2023-06-18T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/</loc>
+    <lastmod>2023-06-18T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/tags/cryptopals/</loc>
     <lastmod>2023-01-26T00:00:00+05:30</lastmod>
   </url><url>
     <loc>https://widp.github.io/blog/tags/programming/</loc>
@@ -16,21 +31,6 @@
   </url><url>
     <loc>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</loc>
     <lastmod>2023-01-26T00:00:00+05:30</lastmod>
-  </url><url>
-    <loc>https://widp.github.io/blog/tags/</loc>
-    <lastmod>2023-01-26T00:00:00+05:30</lastmod>
-  </url><url>
-    <loc>https://widp.github.io/blog/</loc>
-    <lastmod>2023-01-26T00:00:00+05:30</lastmod>
-  </url><url>
-    <loc>https://widp.github.io/blog/tags/math/</loc>
-    <lastmod>2023-01-13T00:00:00+05:30</lastmod>
-  </url><url>
-    <loc>https://widp.github.io/blog/posts/sampling_and_confidence_intervals/</loc>
-    <lastmod>2023-01-13T00:00:00+05:30</lastmod>
-  </url><url>
-    <loc>https://widp.github.io/blog/tags/statistics/</loc>
-    <lastmod>2023-01-13T00:00:00+05:30</lastmod>
   </url><url>
     <loc>https://widp.github.io/blog/posts/azure-work-items-org-mode/</loc>
     <lastmod>2023-01-05T00:00:00+05:30</lastmod>

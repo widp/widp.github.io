@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Tejaswi&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Jan 2023 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sampling And Confidence Intervals</title>
+      <link>https://widp.github.io/blog/posts/sampling_and_confidence_intervals/</link>
+      <pubDate>Sun, 18 Jun 2023 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/sampling_and_confidence_intervals/</guid>
+      <description>Understanding sampling beyond ratios</description>
+    </item>
+    
     <item>
       <title>Scoring functions for breaking cryptopals ciphers</title>
       <link>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</link>
@@ -14,15 +23,6 @@
       
       <guid>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</guid>
       <description>Scoring functions I tried for breaking set 1 challenge 6 from cryptopals</description>
-    </item>
-    
-    <item>
-      <title>Sampling And Confidence Intervals</title>
-      <link>https://widp.github.io/blog/posts/sampling_and_confidence_intervals/</link>
-      <pubDate>Fri, 13 Jan 2023 00:00:00 +0530</pubDate>
-      
-      <guid>https://widp.github.io/blog/posts/sampling_and_confidence_intervals/</guid>
-      <description>Understanding sampling beyond ratios</description>
     </item>
     
     <item>
