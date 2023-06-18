@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Sampling And Confidence Intervals | Tejaswi&#39;s blog</title>
+<meta name="keywords" content="math, statistics">
+<meta name="description" content="Understanding sampling beyond ratios">
+<meta name="author" content="Tejaswi D Prakash">
+<link rel="canonical" href="https://widp.github.io/blog/posts/sampling_and_confidence_intervals/">
+<link crossorigin="anonymous" href="../../assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="../../assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://widp.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://widp.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://widp.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://widp.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://widp.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<meta property="og:title" content="Sampling And Confidence Intervals" />
+<meta property="og:description" content="Understanding sampling beyond ratios" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://widp.github.io/blog/posts/sampling_and_confidence_intervals/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-13T00:00:00&#43;05:30" />
+<meta property="article:modified_time" content="2023-01-13T00:00:00&#43;05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sampling And Confidence Intervals"/>
+<meta name="twitter:description" content="Understanding sampling beyond ratios"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://widp.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Sampling And Confidence Intervals",
+      "item": "https://widp.github.io/blog/posts/sampling_and_confidence_intervals/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Sampling And Confidence Intervals",
+  "name": "Sampling And Confidence Intervals",
+  "description": "Understanding sampling beyond ratios",
+  "keywords": [
+    "math", "statistics"
+  ],
+  "articleBody": "Beyond ratios : Sampling \u0026 confidence intervals Problem: Suppose we have 100 log lines, each line with a different severity level. INFO, WARN, SEVERE.\nSince processing all of them might be expensive, How do we sample a proportion of these log lines? What can we say about the ‘population’ of the log lines from this sample?\nConfidence intervals It lets us make statements such as ‘with x% ’level of confidence’ , the number of severe lines in the overall population will be between y and z.’ So we can obtain this kind of inference based on the proportion from the sample which says something about the the ‘population’.\nUsing Confidence intervals The standard error (sort of like standard deviation), the critical value (based on a distribution) and margin of errors(1- level of confidence) lets us derive confidence intervals.\nSo if 20 lines were sampled from 100 and 2 of them were ‘SEVERE’ The we can use this to come up the confidence interval of the population proportion from this sample proportion.\nlevel of confidence = say 95% critical value = 1.96 (this magic number is based on the normal distribution and the level of confidence) Proportion = \\[2 \\over 20 \\] \\[=0.1\\] Standard error = \\[S.E. = \\sqrt { P(1-P) \\over N }\\] \\[= \\sqrt{(0.1\\times0.9) \\over 20} {=0.067}\\] where P = proportion and N = number of elements in the sample\nthe Confidence interval is given by \\[(0.1+ (1.96 \\times S.E.), 0.1 - (1.96 \\times S.E.) )\\] \\[(0.1 - 0.1312, 0.1 + 0.1312)\\] \\[(-0.3132, 0.23132)\\] taking floors and ceilings as fractional values don’t make sense in terms of the population that would be ( 0, 23)\nand we can say and with 95% level of confidence , the number of severe lines in the overall population will be between 0 - 23.\n#+BEGIN_COMMENT\nWhy this works? From the central limit theorem, the means of the samples from a population form a normal distribution. The confidence interval is derived from this result. i.e. since we have a sample, we know that the mean of the sample is from a normal distribution, given the facts about the normal distribution (68% is from 3 s.d. etc..) for a given confidence level we can come up with a range.\nThere is also chebyshev’s theorem which can be used to arrive at a similar estimate, it makes fewer assumptions about the distribution of the statistic, but the interval then becomes wider.\nMake sure the samples are IID EDITING add a table for the above part 2 idea? more generally\nwork through an example yourself add graphics (atleast a table) plugin in actual numbers improve description of standard error(variance of statistic estimate?), level of confidence\nwhat if the samples are from another distribution (maybe not IID?) (chebyshev’s theorem)\nWhat other parameters can be estimated apart from the mean? #+END_COMMENT\n",
+  "wordCount" : "473",
+  "inLanguage": "en",
+  "datePublished": "2023-01-13T00:00:00+05:30",
+  "dateModified": "2023-01-13T00:00:00+05:30",
+  "author":[{
+    "@type": "Person",
+    "name": "Tejaswi D Prakash"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://widp.github.io/blog/posts/sampling_and_confidence_intervals/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tejaswi's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://widp.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://widp.github.io/blog/" accesskey="h" title="Tejaswi&#39;s blog (Alt + H)">Tejaswi&#39;s blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://widp.github.io/blog/tags" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Sampling And Confidence Intervals
+    </h1>
+    <div class="post-description">
+      Understanding sampling beyond ratios
+    </div>
+    <div class="post-meta"><span title='2023-01-13 00:00:00 +0530 IST'>January 13, 2023</span>&nbsp;·&nbsp;Tejaswi D Prakash
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="beyond-ratios-sampling-and-confidence-intervals">Beyond ratios : Sampling &amp; confidence intervals<a hidden class="anchor" aria-hidden="true" href="#beyond-ratios-sampling-and-confidence-intervals">#</a></h2>
+<h3 id="problem">Problem:<a hidden class="anchor" aria-hidden="true" href="#problem">#</a></h3>
+<p>Suppose we have 100 log lines, each line with a different severity
+level.  INFO, WARN, SEVERE.</p>
+<p>Since processing all of them might be expensive, How do we sample a
+proportion of these log lines? What can we say about the
+&lsquo;population&rsquo; of the log lines from this sample?</p>
+<h3 id="confidence-intervals">Confidence intervals<a hidden class="anchor" aria-hidden="true" href="#confidence-intervals">#</a></h3>
+<p>It lets us make statements such as
+&lsquo;with x% &rsquo;level of confidence&rsquo; , the number of
+severe lines in the overall population will be between y and z.&rsquo;
+So we can obtain this kind of inference based on the proportion from the sample
+which says something about the the &lsquo;population&rsquo;.</p>
+<h3 id="using-confidence-intervals">Using Confidence intervals<a hidden class="anchor" aria-hidden="true" href="#using-confidence-intervals">#</a></h3>
+<p>The standard error (sort of like standard deviation), the critical value
+(based on a distribution) and margin of errors(1- level of confidence) lets us derive
+confidence intervals.</p>
+<p>So if 20 lines were sampled from 100 and 2 of them were &lsquo;SEVERE&rsquo;
+The we can use this to come up the confidence interval of the population
+proportion from this sample proportion.</p>
+<p>level of confidence = say 95%
+critical value = 1.96 (this magic number is based on the normal distribution and the level of confidence)
+Proportion = \[2 \over 20 \] \[=0.1\]
+Standard error = \[S.E. = \sqrt { P(1-P) \over N }\]
+\[= \sqrt{(0.1\times0.9) \over 20} {=0.067}\]
+where P = proportion and N = number of elements in the sample</p>
+<p>the Confidence interval is given by \[(0.1+ (1.96 \times S.E.), 0.1 - (1.96 \times S.E.) )\]
+\[(0.1 - 0.1312, 0.1 + 0.1312)\]
+\[(-0.3132, 0.23132)\]
+taking floors and ceilings as fractional values don&rsquo;t make sense
+in terms of the population that would be ( 0, 23)</p>
+<p>and we can say and with 95% level of confidence , the number of
+severe lines in the overall population will be between 0 - 23.</p>
+<p>#+BEGIN_COMMENT</p>
+<h3 id="why-this-works">Why this works?<a hidden class="anchor" aria-hidden="true" href="#why-this-works">#</a></h3>
+<p>From the central limit theorem, the means of the samples from a
+population form a normal distribution.  The confidence interval is
+derived from this result.  i.e. since we have a sample, we know
+that the mean of the sample is from a normal distribution, given
+the facts about the normal distribution (68% is from 3 s.d. etc..)
+for a given confidence level we can come up with a range.</p>
+<h3 id="there-is-also-chebyshev-s-theorem">There is also chebyshev&rsquo;s theorem<a hidden class="anchor" aria-hidden="true" href="#there-is-also-chebyshev-s-theorem">#</a></h3>
+<p>which can be used to arrive at a similar estimate, it makes fewer assumptions about
+the distribution of the statistic, but the interval then becomes wider.</p>
+<h3 id="make-sure-the-samples-are-iid">Make sure the samples are IID<a hidden class="anchor" aria-hidden="true" href="#make-sure-the-samples-are-iid">#</a></h3>
+<h3 id="editing-add-a-table-for-the-above">EDITING add a table for the above<a hidden class="anchor" aria-hidden="true" href="#editing-add-a-table-for-the-above">#</a></h3>
+<h4 id="part-2-idea">part 2 idea?<a hidden class="anchor" aria-hidden="true" href="#part-2-idea">#</a></h4>
+<p>more generally</p>
+<ol>
+<li>work through an example yourself</li>
+<li>add graphics (atleast a table)</li>
+<li>plugin in actual numbers</li>
+<li>improve description of</li>
+</ol>
+<p>standard error(variance of statistic estimate?), level of confidence</p>
+<h4 id="what-if-the-samples-are-from-another-distribution--maybe-not-iid">what if the samples are from another distribution (maybe not IID?)<a hidden class="anchor" aria-hidden="true" href="#what-if-the-samples-are-from-another-distribution--maybe-not-iid">#</a></h4>
+<p>(chebyshev&rsquo;s theorem)</p>
+<h4 id="what-other-parameters-can-be-estimated-apart-from-the-mean">What other parameters can be estimated apart from the mean?<a hidden class="anchor" aria-hidden="true" href="#what-other-parameters-can-be-estimated-apart-from-the-mean">#</a></h4>
+<p>#+END_COMMENT</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://widp.github.io/blog/tags/math/">math</a></li>
+      <li><a href="https://widp.github.io/blog/tags/statistics/">statistics</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://widp.github.io/blog/">Tejaswi&#39;s blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
