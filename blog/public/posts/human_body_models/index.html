@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Overview of Parametric Human Body Models | Tejaswi&#39;s blog</title>
+<meta name="keywords" content="Mocap">
+<meta name="description" content="Research related to parametric human body models">
+<meta name="author" content="Tejaswi D Prakash">
+<link rel="canonical" href="https://widp.github.io/blog/posts/human_body_models/">
+<link crossorigin="anonymous" href="../../assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="../../assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://widp.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://widp.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://widp.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://widp.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://widp.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+<meta property="og:title" content="Overview of Parametric Human Body Models" />
+<meta property="og:description" content="Research related to parametric human body models" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://widp.github.io/blog/posts/human_body_models/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-05T00:00:00&#43;05:30" />
+<meta property="article:modified_time" content="2022-03-05T00:00:00&#43;05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Overview of Parametric Human Body Models"/>
+<meta name="twitter:description" content="Research related to parametric human body models"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://widp.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Overview of Parametric Human Body Models",
+      "item": "https://widp.github.io/blog/posts/human_body_models/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Overview of Parametric Human Body Models",
+  "name": "Overview of Parametric Human Body Models",
+  "description": "Research related to parametric human body models",
+  "keywords": [
+    "Mocap"
+  ],
+  "articleBody": "Problem with anthropometric data see: CAESAR and ANSUR II\nThey all need to be licensed\nA good start to this would be check out the SMPL* body models first they have provided starter code for use with neural network libraries such as tensorflow/pytorch\nThis blog post describes how to use the code related to these models Overview of SMPL* models and methods This is from one of their youtube videos :\nsmplify-x This computes a body model using a single photo There is also PiFU-HD which does , but that is non-parametric\nConsequently, we follow the approach of SMPLify, which estimates 2D features and then optimizes model parameters to fit the features.\nthey use 2d features to optimize SMPL-X model parameters\n",
+  "wordCount" : "121",
+  "inLanguage": "en",
+  "datePublished": "2022-03-05T00:00:00+05:30",
+  "dateModified": "2022-03-05T00:00:00+05:30",
+  "author":[{
+    "@type": "Person",
+    "name": "Tejaswi D Prakash"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://widp.github.io/blog/posts/human_body_models/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tejaswi's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://widp.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://widp.github.io/blog/" accesskey="h" title="Tejaswi&#39;s blog (Alt + H)">Tejaswi&#39;s blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://widp.github.io/blog/tags" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Overview of Parametric Human Body Models
+    </h1>
+    <div class="post-description">
+      Research related to parametric human body models
+    </div>
+    <div class="post-meta"><span title='2022-03-05 00:00:00 +0530 IST'>March 5, 2022</span>&nbsp;·&nbsp;Tejaswi D Prakash
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="problem-with-anthropometric-data">Problem with anthropometric data<a hidden class="anchor" aria-hidden="true" href="#problem-with-anthropometric-data">#</a></h2>
+<p>see: <a href="https://graphics.soe.ucsc.edu/data/BodyModels/index.html">CAESAR</a> and <a href="https://www.openlab.psu.edu/ansur2/">ANSUR II</a></p>
+<p>They all need to be licensed</p>
+<h3 id="a-good-start-to-this-would-be">A good start to this would be<a hidden class="anchor" aria-hidden="true" href="#a-good-start-to-this-would-be">#</a></h3>
+<h4 id="check-out-the-smpl-body-models-first">check out the <a href="https://smpl.is.tue.mpg.de/">SMPL*</a> body models first<a hidden class="anchor" aria-hidden="true" href="#check-out-the-smpl-body-models-first">#</a></h4>
+<p>they have provided starter code for use with neural network libraries such as tensorflow/pytorch</p>
+<h4 id="this-blog-post-describes-how-to-use-the-code-related-to-these-models"><a href="https://khanhha.github.io/posts/SMPL-model-introduction/">This blog post describes how to use the code related to these models</a><a hidden class="anchor" aria-hidden="true" href="#this-blog-post-describes-how-to-use-the-code-related-to-these-models">#</a></h4>
+<h2 id="overview-of-smpl-models-and-methods">Overview of SMPL* models and methods<a hidden class="anchor" aria-hidden="true" href="#overview-of-smpl-models-and-methods">#</a></h2>
+<p>This is from one of their youtube videos :</p>
+<figure>
+    <img loading="lazy" src="../../ox-hugo/body_model_overview.png"/> 
+</figure>
+
+<h2 id="smplify-x"><a href="https://github.com/vchoutas/smplify-x">smplify-x</a><a hidden class="anchor" aria-hidden="true" href="#smplify-x">#</a></h2>
+<h3 id="this-computes-a-body-model-using-a-single-photo">This computes a body model using a single photo<a hidden class="anchor" aria-hidden="true" href="#this-computes-a-body-model-using-a-single-photo">#</a></h3>
+<p>There is also <a href="https://shunsukesaito.github.io/PIFuHD/">PiFU-HD</a> which does , but that is non-parametric</p>
+<blockquote>
+<p>Consequently, we follow the approach of SMPLify, which estimates 2D features and then optimizes model parameters to fit the features.</p>
+</blockquote>
+<p>they use 2d features to optimize SMPL-X model parameters</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://widp.github.io/blog/tags/mocap/">Mocap</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://widp.github.io/blog/">Tejaswi&#39;s blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

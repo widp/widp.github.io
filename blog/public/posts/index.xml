@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Tejaswi&#39;s blog</title>
+    <link>https://widp.github.io/blog/posts/</link>
+    <description>Recent content in Posts on Tejaswi&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sampling And Confidence Intervals</title>
+      <link>https://widp.github.io/blog/posts/sampling_and_confidence_intervals/</link>
+      <pubDate>Sun, 18 Jun 2023 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/sampling_and_confidence_intervals/</guid>
+      <description>Understanding sampling beyond ratios</description>
+    </item>
+    
+    <item>
+      <title>Scoring functions for breaking cryptopals ciphers</title>
+      <link>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</link>
+      <pubDate>Thu, 26 Jan 2023 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</guid>
+      <description>Scoring functions I tried for breaking set 1 challenge 6 from cryptopals</description>
+    </item>
+    
+    <item>
+      <title>Azure Work Items And Org mode</title>
+      <link>https://widp.github.io/blog/posts/azure-work-items-org-mode/</link>
+      <pubDate>Thu, 05 Jan 2023 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/azure-work-items-org-mode/</guid>
+      <description>Using Azure Issue ids as tags/props in emacs org mode</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on Viewing Logs</title>
+      <link>https://widp.github.io/blog/posts/viewing_logs/</link>
+      <pubDate>Wed, 04 Jan 2023 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/viewing_logs/</guid>
+      <description>Viewing Logs And Log Viewers</description>
+    </item>
+    
+    <item>
+      <title>Disabling SSL while using Git and pip</title>
+      <link>https://widp.github.io/blog/posts/ssl_errors_behind_proxy/</link>
+      <pubDate>Sat, 16 Jul 2022 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/ssl_errors_behind_proxy/</guid>
+      <description>How to use git and pip behind a corporate proxy</description>
+    </item>
+    
+    <item>
+      <title>Using git with large mono repos</title>
+      <link>https://widp.github.io/blog/posts/git_for_mono_repos/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/git_for_mono_repos/</guid>
+      <description>Working with Large Git repositories</description>
+    </item>
+    
+    <item>
+      <title>Nvarchar and Nchar oracle db</title>
+      <link>https://widp.github.io/blog/posts/nvarchar/</link>
+      <pubDate>Fri, 27 May 2022 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/nvarchar/</guid>
+      <description>alternative method of enabling utf</description>
+    </item>
+    
+    <item>
+      <title>Initializing List with an array in Java</title>
+      <link>https://widp.github.io/blog/posts/initializing_java_list/</link>
+      <pubDate>Fri, 18 Mar 2022 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/initializing_java_list/</guid>
+      <description>Java lists</description>
+    </item>
+    
+    <item>
+      <title>Overview of Parametric Human Body Models</title>
+      <link>https://widp.github.io/blog/posts/human_body_models/</link>
+      <pubDate>Sat, 05 Mar 2022 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/human_body_models/</guid>
+      <description>Research related to parametric human body models</description>
+    </item>
+    
+    <item>
+      <title>Ray tracing in a weekend in python</title>
+      <link>https://widp.github.io/blog/posts/ray_tracing_in_a_weekend/</link>
+      <pubDate>Sun, 14 Nov 2021 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/ray_tracing_in_a_weekend/</guid>
+      <description>adapting the code from the book &amp;#39;Raytracing in a weekend</description>
+    </item>
+    
+  </channel>
+</rss>
