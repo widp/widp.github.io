@@ -6,7 +6,16 @@
     <description>Recent content on Tejaswi&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Apr 2024 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 May 2024 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kelly criterion and betting</title>
+      <link>https://widp.github.io/blog/posts/kelly_criterion_and_betting/</link>
+      <pubDate>Sun, 26 May 2024 00:00:00 +0530</pubDate>
+      
+      <guid>https://widp.github.io/blog/posts/kelly_criterion_and_betting/</guid>
+      <description>Mathematics in horse betting</description>
+    </item>
+    
     <item>
       <title>Bugs in applications &amp; pinned plans in queries</title>
       <link>https://widp.github.io/blog/posts/my_note/</link>

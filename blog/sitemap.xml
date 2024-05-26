@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://widp.github.io/blog/posts/kelly_criterion_and_betting/</loc>
+    <lastmod>2024-05-26T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/tags/mathematics/</loc>
+    <lastmod>2024-05-26T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/posts/</loc>
+    <lastmod>2024-05-26T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/tags/</loc>
+    <lastmod>2024-05-26T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/</loc>
+    <lastmod>2024-05-26T00:00:00+05:30</lastmod>
+  </url><url>
     <loc>https://widp.github.io/blog/posts/my_note/</loc>
     <lastmod>2024-04-05T00:00:00+05:30</lastmod>
   </url><url>
@@ -11,16 +26,7 @@
     <loc>https://widp.github.io/blog/tags/oracle/</loc>
     <lastmod>2024-04-05T00:00:00+05:30</lastmod>
   </url><url>
-    <loc>https://widp.github.io/blog/posts/</loc>
-    <lastmod>2024-04-05T00:00:00+05:30</lastmod>
-  </url><url>
     <loc>https://widp.github.io/blog/tags/programming/</loc>
-    <lastmod>2024-04-05T00:00:00+05:30</lastmod>
-  </url><url>
-    <loc>https://widp.github.io/blog/tags/</loc>
-    <lastmod>2024-04-05T00:00:00+05:30</lastmod>
-  </url><url>
-    <loc>https://widp.github.io/blog/</loc>
     <lastmod>2024-04-05T00:00:00+05:30</lastmod>
   </url><url>
     <loc>https://widp.github.io/blog/tags/math/</loc>
