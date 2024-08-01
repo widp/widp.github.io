@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Azure Work Items And Org mode | Tejaswi&#39;s blog</title>
 <meta name="keywords" content="emacs, programming, powershell">
 <meta name="description" content="Using Azure Issue ids as tags/props in emacs org mode">
 <meta name="author" content="Tejaswi D Prakash">
-<link rel="canonical" href="http://localhost:1313/posts/azure-work-items-org-mode/">
-<link crossorigin="anonymous" href="../../assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://widp.github.io/blog/posts/azure-work-items-org-mode/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://widp.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://widp.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://widp.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://widp.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://widp.github.io/blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/azure-work-items-org-mode/">
+<link rel="alternate" hreflang="en" href="https://widp.github.io/blog/posts/azure-work-items-org-mode/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,6 +56,73 @@
 
     </style>
 </noscript>
+  
+
+<meta property="og:title" content="Azure Work Items And Org mode" />
+<meta property="og:description" content="Using Azure Issue ids as tags/props in emacs org mode" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://widp.github.io/blog/posts/azure-work-items-org-mode/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-05T00:00:00+05:30" />
+<meta property="article:modified_time" content="2023-01-05T00:00:00+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Azure Work Items And Org mode"/>
+<meta name="twitter:description" content="Using Azure Issue ids as tags/props in emacs org mode"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://widp.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Azure Work Items And Org mode",
+      "item": "https://widp.github.io/blog/posts/azure-work-items-org-mode/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Azure Work Items And Org mode",
+  "name": "Azure Work Items And Org mode",
+  "description": "Using Azure Issue ids as tags/props in emacs org mode",
+  "keywords": [
+    "emacs", "programming", "powershell"
+  ],
+  "articleBody": "The following post is about viewing data from azure work items (ticket id, title etc..) and managing org notes by tagging them.\nSetting up az cli \u0026 az devops extension for az cli azure has a cli and for azure devops there is an extension .\n#after installing azure cli \u0026 cli devops extension #login az devops login Viewing tickets in org mode (using az wiql) This snippet does two things\nShows a table of ticket ids , titles etc.. in org mode Saves it as JSON to be used by other functions Azure-cli supports queries with a syntax called wiql cd C:\\Users\\Tejaswi.DPrakash\\Documents\\code\\azure-devops; #I use a python venv. scripts\\activate $res = az boards query --output json --wiql \"SELECT [id],[Description], [Title],[Priority], [Changed Date] FROM workitems where [system.assignedto] = 'widp' and [system.state] \u003c\u003e 'DONE' and [system.state] \u003c\u003e 'RESOLVED' \" --organization \"https://dev.azure.com/myorg/\" --project \"my project\"; $res | out-file C:\\Users\\tickets.json ; $res = az boards query --output table --wiql \"SELECT [id], [Title],[Priority], [Changed Date] FROM workitems where [system.assignedto] = 'widp' and [system.state] \u003c\u003e 'DONE' and [system.state] \u003c\u003e 'RESOLVED' \" --organization \"https://dev.azure.com/myorg/\" --project \"my project\"; write-output $res write-output \"fetching results complete\"; Tagging org mode entries with ticket numbers using completing-read This snippet parses the json file. The set-ticket-id function displays a completion interface with work item title, and sets the id of the work item as the tag/property of the current org subtree.\n(defvar titleID-hashtable (make-hash-table :test 'equal )) (defun set-ticket-id(\u0026optional return-string) (interactive) (with-temp-buffer (insert-file-contents \"C:\\\\Users\\\\\\\\tickets.json\") (setq tickets-json (json-parse-buffer)) (setq tickets-json-list (append tickets-json nil)) (mapcar (lambda (x) (puthash (gethash \"System.Title\" (gethash \"fields\" x)) (gethash \"id\" x) titleID-hashtable)) tickets-json-list)) (setq tag-or-prop (completing-read \"tag or prop?\" '(\"tag\" \"property\"))) (setq selected-id (number-to-string (gethash (completing-read \"get-ticket-id\" titleID-hashtable) titleID-hashtable))) (if (equal return-string nil) (if (equal tag-or-prop \"property\") (org-set-property \"TICKET_ID\" selected-id) (org-set-tags selected-id)) selected-id)) ",
+  "wordCount" : "293",
+  "inLanguage": "en",
+  "datePublished": "2023-01-05T00:00:00+05:30",
+  "dateModified": "2023-01-05T00:00:00+05:30",
+  "author":[{
+    "@type": "Person",
+    "name": "Tejaswi D Prakash"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://widp.github.io/blog/posts/azure-work-items-org-mode/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tejaswi's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://widp.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +140,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Tejaswi&#39;s blog (Alt + H)">Tejaswi&#39;s blog</a>
+            <a href="https://widp.github.io/blog/" accesskey="h" title="Tejaswi&#39;s blog (Alt + H)">Tejaswi&#39;s blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -99,7 +166,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/tags" title="Tags">
+                <a href="https://widp.github.io/blog/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -178,16 +245,16 @@ and sets the id of the work item as the tag/property of the current org subtree.
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/emacs/">Emacs</a></li>
-      <li><a href="http://localhost:1313/tags/programming/">Programming</a></li>
-      <li><a href="http://localhost:1313/tags/powershell/">Powershell</a></li>
+      <li><a href="https://widp.github.io/blog/tags/emacs/">Emacs</a></li>
+      <li><a href="https://widp.github.io/blog/tags/programming/">Programming</a></li>
+      <li><a href="https://widp.github.io/blog/tags/powershell/">Powershell</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">Tejaswi&#39;s blog</a></span> · 
+        <span>&copy; 2024 <a href="https://widp.github.io/blog/">Tejaswi&#39;s blog</a></span> · 
 
     <span>
         Powered by

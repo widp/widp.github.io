@@ -1,96 +1,97 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Tejaswi&#39;s blog</title>
-    <link>http://localhost:1313/blog/posts/</link>
+    <link>https://widp.github.io/blog/posts/</link>
     <description>Recent content in Posts on Tejaswi&#39;s blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.130.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 May 2024 00:00:00 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://widp.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kelly criterion and betting</title>
-      <link>http://localhost:1313/blog/posts/kelly_criterion_and_betting/</link>
+      <link>https://widp.github.io/blog/posts/kelly_criterion_and_betting/</link>
       <pubDate>Sun, 26 May 2024 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/kelly_criterion_and_betting/</guid>
-      <description>I recently came across (and actually understood this time) , arbitrage opportunities in FX exchange rates.&#xA;So there is a graph algorithm which when used against different FX pairs, can tell us if riskless bets can be made.&#xA;Trying to apply the same to horse betting seemed obvious at first glance, but since there is no clear &amp;lsquo;graph&amp;rsquo; we can exploit here, it took some time for me to understand how it is possible.</description>
+      <guid>https://widp.github.io/blog/posts/kelly_criterion_and_betting/</guid>
+      <description>Mathematics in horse betting</description>
     </item>
     <item>
       <title>Bugs in applications &amp; pinned plans in queries</title>
-      <link>http://localhost:1313/blog/posts/my_note/</link>
+      <link>https://widp.github.io/blog/posts/my_note/</link>
       <pubDate>Fri, 05 Apr 2024 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/my_note/</guid>
-      <description>Bugs in applications &amp;amp; pinned plans in queries At my place of work, one of the ways non optimal plans are handled , is by gathering stats. The other method is to use SQL profiles, by &amp;lsquo;pinning&amp;rsquo; plans to queries. Oracle also supports SQL baselines another method of doing a similar thing.&#xA;This leads to problems as plans which work today, might not work two years down the line. (Think table stats evolution over time).</description>
+      <guid>https://widp.github.io/blog/posts/my_note/</guid>
+      <description>Bugs in applications &amp;amp; pinned plans in queries At my place of work, one of the ways non optimal plans are handled , is by gathering stats. The other method is to use SQL profiles, by &amp;lsquo;pinning&amp;rsquo; plans to queries. Oracle also supports SQL baselines another method of doing a similar thing.
+This leads to problems as plans which work today, might not work two years down the line. (Think table stats evolution over time).</description>
     </item>
     <item>
       <title>Sampling And Confidence Intervals</title>
-      <link>http://localhost:1313/blog/posts/sampling_and_confidence_intervals/</link>
+      <link>https://widp.github.io/blog/posts/sampling_and_confidence_intervals/</link>
       <pubDate>Sun, 18 Jun 2023 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/sampling_and_confidence_intervals/</guid>
-      <description>Beyond ratios : Sampling &amp;amp; confidence intervals Problem: Suppose we have 100 log lines, each line with a different severity level. INFO, WARN, SEVERE.&#xA;Since processing all of them might be expensive, How do we sample a proportion of these log lines? What can we say about the &amp;lsquo;population&amp;rsquo; of the log lines from this sample?&#xA;Confidence intervals It lets us make statements such as &amp;lsquo;with x% &amp;rsquo;level of confidence&amp;rsquo; the number of severe lines in the overall population will be between y and z.</description>
+      <guid>https://widp.github.io/blog/posts/sampling_and_confidence_intervals/</guid>
+      <description>Understanding sampling beyond ratios</description>
     </item>
     <item>
       <title>Scoring functions for breaking cryptopals ciphers</title>
-      <link>http://localhost:1313/blog/posts/cryptopals-repeating-key-xor/</link>
+      <link>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</link>
       <pubDate>Thu, 26 Jan 2023 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/cryptopals-repeating-key-xor/</guid>
-      <description>The problem is to find a scoring function. A function which assigns a number to the likeliness of a message to be english.&#xA;What I tried for the score computing function Most of them based on &amp;lsquo;ETAOIN SHRDLU&amp;rsquo; (frequency analysis)&#xA;Position based weighting (higher score is better) def scorecompute(msg): score = 0 positions = &amp;#39;ETAOIN SHRDLU&amp;#39; for i in positions: weight = len(positions) - positions.find(i) score += msg.upper().count(i) * weight return score doesn&amp;rsquo;t work so well From this point on higher scores are worse.</description>
+      <guid>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</guid>
+      <description>Scoring functions I tried for breaking set 1 challenge 6 from cryptopals</description>
     </item>
     <item>
       <title>Azure Work Items And Org mode</title>
-      <link>http://localhost:1313/blog/posts/azure-work-items-org-mode/</link>
+      <link>https://widp.github.io/blog/posts/azure-work-items-org-mode/</link>
       <pubDate>Thu, 05 Jan 2023 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/azure-work-items-org-mode/</guid>
-      <description>The following post is about viewing data from azure work items (ticket id, title etc..) and managing org notes by tagging them.&#xA;Setting up az cli &amp;amp; az devops extension for az cli azure has a cli and for azure devops there is an extension .&#xA;#after installing azure cli &amp;amp; cli devops extension #login az devops login Viewing tickets in org mode (using az wiql) This snippet does two things</description>
+      <guid>https://widp.github.io/blog/posts/azure-work-items-org-mode/</guid>
+      <description>Using Azure Issue ids as tags/props in emacs org mode</description>
     </item>
     <item>
       <title>Thoughts on Viewing Logs</title>
-      <link>http://localhost:1313/blog/posts/viewing_logs/</link>
+      <link>https://widp.github.io/blog/posts/viewing_logs/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/viewing_logs/</guid>
-      <description>log viewing What I tried Logview mode emacs&#xA;Notepad++&#xA;Notepad++ supports &amp;lsquo;User Defined Languages&amp;rsquo; for key word highlighting, folding etc..&#xA;Wrote a log search gui in tkinter&#xA;Tried this first , until I discovered notepad++ has all of the features I added built into it.&#xA;How I wanted to go about it Regular expression for the tokens and parsing for the log format Turns out you don&amp;rsquo;t need that level of configuration See 1 timestamp tz LEVEL message etc.</description>
+      <guid>https://widp.github.io/blog/posts/viewing_logs/</guid>
+      <description>Viewing Logs And Log Viewers</description>
     </item>
     <item>
       <title>Disabling SSL while using Git and pip</title>
-      <link>http://localhost:1313/blog/posts/ssl_errors_behind_proxy/</link>
+      <link>https://widp.github.io/blog/posts/ssl_errors_behind_proxy/</link>
       <pubDate>Sat, 16 Jul 2022 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/ssl_errors_behind_proxy/</guid>
-      <description>SSL errors If you get errors like :&#xA;unable to get local issuer certificate error&#xA;or&#xA;Failed to connect to github.com port 443 after 21380 ms: Timed out&#xA;while using git OR&#xA;WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by &amp;lsquo;ConnectTimeoutError&#xA;while using pip , It could mean you are behind a corporate proxy. Behind tools such as ZScaler.&#xA;A quick fix to this (although not the safest way) is to disable ssl for Git</description>
+      <guid>https://widp.github.io/blog/posts/ssl_errors_behind_proxy/</guid>
+      <description>How to use git and pip behind a corporate proxy</description>
     </item>
     <item>
       <title>Using git with large mono repos</title>
-      <link>http://localhost:1313/blog/posts/git_for_mono_repos/</link>
+      <link>https://widp.github.io/blog/posts/git_for_mono_repos/</link>
       <pubDate>Thu, 16 Jun 2022 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/git_for_mono_repos/</guid>
-      <description>The following approaches can be used to work with large git repositories. Limit large files from being downloaded.&#xA;using &amp;lsquo;filter&amp;rsquo; So files such as large binaries, zip files won&amp;rsquo;t be downloaded.&#xA;#size in MB git clone --no-checkout --filter=blob:limit=&amp;lt;size&amp;gt; your_git_repo.com Limit git to a set of directories&#xA;This can be done using git &amp;lsquo;sparse checkout&amp;rsquo;&#xA;#inialize empty git repo mkdir your_git_dir; cd your_git_dir git init # set which sub-directory contents you want git sparse-checkout set --cone input-directory #add remote and do a pull git remote add origin my_git_repo.</description>
+      <guid>https://widp.github.io/blog/posts/git_for_mono_repos/</guid>
+      <description>Working with Large Git repositories</description>
     </item>
     <item>
       <title>Nvarchar and Nchar oracle db</title>
-      <link>http://localhost:1313/blog/posts/nvarchar/</link>
+      <link>https://widp.github.io/blog/posts/nvarchar/</link>
       <pubDate>Fri, 27 May 2022 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/nvarchar/</guid>
-      <description>NVARCHAR and NCHAR in oracle Oracle supports multiple charactersets at the same time through its use of the NLS* paramters.&#xA;select * from nls_database_parameters where parameter in (&amp;#39;NLS_LENGTH_SEMANTICS&amp;#39;, &amp;#39;NLS_CHARACTERSET&amp;#39;, &amp;#39;NLS_NCHAR_CHARACTERSET&amp;#39;); There are two things to note&#xA;The value of NLS_CHARACTERSET The value of NLS_NCHAR_CHARACTERSET on my system the values are the following&#xA;NLS_NCHAR_CHARACTERSET = AL16UTF16&#xA;NLS_CHARACTERSET = WE8ISO8859P1&#xA;If you haven&amp;rsquo;t already guessed from the title of this article, NVARCHAR and NCHAR are two additional data types which behave similar to VARCHAR and CHAR.</description>
+      <guid>https://widp.github.io/blog/posts/nvarchar/</guid>
+      <description>alternative method of enabling utf</description>
     </item>
     <item>
       <title>Initializing List with an array in Java</title>
-      <link>http://localhost:1313/blog/posts/initializing_java_list/</link>
+      <link>https://widp.github.io/blog/posts/initializing_java_list/</link>
       <pubDate>Fri, 18 Mar 2022 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/initializing_java_list/</guid>
-      <description>Initializing Lists Why is this&#xA;List&amp;lt;Integer&amp;gt; a = new List&amp;lt;Integer&amp;gt;({1,2,3}) not possible?&#xA;Simple workaround&#xA;class ListInit { public static void main(String args[]){ List&amp;lt;Integer&amp;gt; a = Arrays.asList(1,2,3); } } but,&#xA;Is it not possible to initialize a List with an array literal?&#xA;It is!&#xA;That means Arrays.asList() should work with an array literal.&#xA;But the below doesn&amp;rsquo;t work.&#xA;List&amp;lt;Integer&amp;gt; a = Arrays.asList({1,2,3}); Although this does with the &amp;rsquo;new&amp;rsquo; keyword.&#xA;List&amp;lt;Integer&amp;gt; a = Arrays.</description>
+      <guid>https://widp.github.io/blog/posts/initializing_java_list/</guid>
+      <description>Java lists</description>
     </item>
     <item>
       <title>Overview of Parametric Human Body Models</title>
-      <link>http://localhost:1313/blog/posts/human_body_models/</link>
+      <link>https://widp.github.io/blog/posts/human_body_models/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/human_body_models/</guid>
-      <description>Problem with anthropometric data see: CAESAR and ANSUR II&#xA;They all need to be licensed&#xA;A good start to this would be check out the SMPL* body models first they have provided starter code for use with neural network libraries such as tensorflow/pytorch&#xA;This blog post describes how to use the code related to these models Overview of SMPL* models and methods This is from one of their youtube videos :</description>
+      <guid>https://widp.github.io/blog/posts/human_body_models/</guid>
+      <description>Research related to parametric human body models</description>
     </item>
     <item>
       <title>Ray tracing in a weekend in python</title>
-      <link>http://localhost:1313/blog/posts/ray_tracing_in_a_weekend/</link>
+      <link>https://widp.github.io/blog/posts/ray_tracing_in_a_weekend/</link>
       <pubDate>Sun, 14 Nov 2021 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/ray_tracing_in_a_weekend/</guid>
-      <description>From the book Raytracing in a weekend code adapted to python&#xA;emacs configuration emacs (org-babel-do-load-languages &amp;#39;org-babel-load-languages &amp;#39;((python . t))) (setq org-src-preserve-indentation t) helper functions from utilities import point3,color,ray,vec3 import math def dot(vec1, vec2): return (vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z ) import math def unit_vector(v): length = math.sqrt(v.x**2+ v.y**2+ v.z**2) return vec3(v.x/length, v.y/length, v.z/length) def ray_color(r): t = hit_sphere(point3(0,0, -1), 0.5, r) if( t &amp;gt; 0.</description>
+      <guid>https://widp.github.io/blog/posts/ray_tracing_in_a_weekend/</guid>
+      <description>adapting the code from the book &amp;#39;Raytracing in a weekend</description>
     </item>
   </channel>
 </rss>

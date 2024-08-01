@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Using git with large mono repos | Tejaswi&#39;s blog</title>
 <meta name="keywords" content="programming, git">
 <meta name="description" content="Working with Large Git repositories">
 <meta name="author" content="Tejaswi D Prakash">
-<link rel="canonical" href="http://localhost:1313/posts/git_for_mono_repos/">
-<link crossorigin="anonymous" href="../../assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://widp.github.io/blog/posts/git_for_mono_repos/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://widp.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://widp.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://widp.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://widp.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://widp.github.io/blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/git_for_mono_repos/">
+<link rel="alternate" hreflang="en" href="https://widp.github.io/blog/posts/git_for_mono_repos/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,6 +56,73 @@
 
     </style>
 </noscript>
+  
+
+<meta property="og:title" content="Using git with large mono repos" />
+<meta property="og:description" content="Working with Large Git repositories" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://widp.github.io/blog/posts/git_for_mono_repos/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-16T00:00:00+05:30" />
+<meta property="article:modified_time" content="2022-06-16T00:00:00+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using git with large mono repos"/>
+<meta name="twitter:description" content="Working with Large Git repositories"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://widp.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Using git with large mono repos",
+      "item": "https://widp.github.io/blog/posts/git_for_mono_repos/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Using git with large mono repos",
+  "name": "Using git with large mono repos",
+  "description": "Working with Large Git repositories",
+  "keywords": [
+    "programming", "git"
+  ],
+  "articleBody": "The following approaches can be used to work with large git repositories. Limit large files from being downloaded.\nusing ‘filter’ So files such as large binaries, zip files won’t be downloaded.\n#size in MB git clone --no-checkout --filter=blob:limit= your_git_repo.com Limit git to a set of directories\nThis can be done using git ‘sparse checkout’\n#inialize empty git repo mkdir your_git_dir; cd your_git_dir git init # set which sub-directory contents you want git sparse-checkout set --cone input-directory #add remote and do a pull git remote add origin my_git_repo.com git pull origin master Limit the number of commits that will be cloned\ngit with the ‘–depth’ option can be used to limit the history to ’n’ recent commits\ngit clone --depth=10 your_git_repo.com ",
+  "wordCount" : "120",
+  "inLanguage": "en",
+  "datePublished": "2022-06-16T00:00:00+05:30",
+  "dateModified": "2022-06-16T00:00:00+05:30",
+  "author":[{
+    "@type": "Person",
+    "name": "Tejaswi D Prakash"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://widp.github.io/blog/posts/git_for_mono_repos/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tejaswi's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://widp.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +140,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Tejaswi&#39;s blog (Alt + H)">Tejaswi&#39;s blog</a>
+            <a href="https://widp.github.io/blog/" accesskey="h" title="Tejaswi&#39;s blog (Alt + H)">Tejaswi&#39;s blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -99,7 +166,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/tags" title="Tags">
+                <a href="https://widp.github.io/blog/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -155,15 +222,15 @@ So files such as large binaries, zip files won&rsquo;t be downloaded.</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/programming/">Programming</a></li>
-      <li><a href="http://localhost:1313/tags/git/">Git</a></li>
+      <li><a href="https://widp.github.io/blog/tags/programming/">Programming</a></li>
+      <li><a href="https://widp.github.io/blog/tags/git/">Git</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">Tejaswi&#39;s blog</a></span> · 
+        <span>&copy; 2024 <a href="https://widp.github.io/blog/">Tejaswi&#39;s blog</a></span> · 
 
     <span>
         Powered by

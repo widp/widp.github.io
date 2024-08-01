@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Databases on Tejaswi&#39;s blog</title>
-    <link>http://localhost:1313/blog/tags/databases/</link>
+    <link>https://widp.github.io/blog/tags/databases/</link>
     <description>Recent content in Databases on Tejaswi&#39;s blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.130.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 05 Apr 2024 00:00:00 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/databases/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://widp.github.io/blog/tags/databases/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bugs in applications &amp; pinned plans in queries</title>
-      <link>http://localhost:1313/blog/posts/my_note/</link>
+      <link>https://widp.github.io/blog/posts/my_note/</link>
       <pubDate>Fri, 05 Apr 2024 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/my_note/</guid>
-      <description>Bugs in applications &amp;amp; pinned plans in queries At my place of work, one of the ways non optimal plans are handled , is by gathering stats. The other method is to use SQL profiles, by &amp;lsquo;pinning&amp;rsquo; plans to queries. Oracle also supports SQL baselines another method of doing a similar thing.&#xA;This leads to problems as plans which work today, might not work two years down the line. (Think table stats evolution over time).</description>
+      <guid>https://widp.github.io/blog/posts/my_note/</guid>
+      <description>Bugs in applications &amp;amp; pinned plans in queries At my place of work, one of the ways non optimal plans are handled , is by gathering stats. The other method is to use SQL profiles, by &amp;lsquo;pinning&amp;rsquo; plans to queries. Oracle also supports SQL baselines another method of doing a similar thing.
+This leads to problems as plans which work today, might not work two years down the line. (Think table stats evolution over time).</description>
     </item>
   </channel>
 </rss>

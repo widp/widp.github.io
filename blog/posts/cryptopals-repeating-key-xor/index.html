@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Scoring functions for breaking cryptopals ciphers | Tejaswi&#39;s blog</title>
 <meta name="keywords" content="programming, python, cryptopals">
 <meta name="description" content="Scoring functions I tried for breaking set 1 challenge 6 from cryptopals">
 <meta name="author" content="Tejaswi D Prakash">
-<link rel="canonical" href="http://localhost:1313/posts/cryptopals-repeating-key-xor/">
-<link crossorigin="anonymous" href="../../assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://widp.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://widp.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://widp.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://widp.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://widp.github.io/blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/cryptopals-repeating-key-xor/">
+<link rel="alternate" hreflang="en" href="https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,6 +56,73 @@
 
     </style>
 </noscript>
+  
+
+<meta property="og:title" content="Scoring functions for breaking cryptopals ciphers" />
+<meta property="og:description" content="Scoring functions I tried for breaking set 1 challenge 6 from cryptopals" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-26T00:00:00+05:30" />
+<meta property="article:modified_time" content="2023-01-26T00:00:00+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scoring functions for breaking cryptopals ciphers"/>
+<meta name="twitter:description" content="Scoring functions I tried for breaking set 1 challenge 6 from cryptopals"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://widp.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Scoring functions for breaking cryptopals ciphers",
+      "item": "https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Scoring functions for breaking cryptopals ciphers",
+  "name": "Scoring functions for breaking cryptopals ciphers",
+  "description": "Scoring functions I tried for breaking set 1 challenge 6 from cryptopals",
+  "keywords": [
+    "programming", "python", "cryptopals"
+  ],
+  "articleBody": "The problem is to find a scoring function. A function which assigns a number to the likeliness of a message to be english.\nWhat I tried for the score computing function Most of them based on ‘ETAOIN SHRDLU’ (frequency analysis)\nPosition based weighting (higher score is better) def scorecompute(msg): score = 0 positions = 'ETAOIN SHRDLU' for i in positions: weight = len(positions) - positions.find(i) score += msg.upper().count(i) * weight return score doesn’t work so well From this point on higher scores are worse.\nThis one is not based on frequency analysis\nEnsure all characters are ascii\ndef scorecompute(msg): if check_english: if not re.fullmatch('[A-Z 0-9\\n]+', msg.upper()): return float('inf') return 1 Chi-squared based on character frequency\nInclude non-alphabetic character frequency ( ‘.’,’’’, ‘:’ etc..)\ndef scorecompute(msg: str): \"\"\" Uses chi square test to compute 'score' less score means the message is more likely to be english( match the 'frequency table') \"\"\" # add space, non-alpha characters usage too freq_table = {\"A\": 8.55, \"K\": 0.81, \"U\": 2.68, \"B\": 1.60, \"L\": 4.21, \"V\": 1.06, \"C\": 3.16, \"M\": 2.53, \"W\": 1.83, \"D\": 3.87, \"N\": 7.17, \"X\": 0.19, \"E\": 12.10, \"O\": 7.47, \"Y\": 1.72, \"F\": 2.18, \"P\": 2.07, \"Z\": 0.11, \"G\": 2.09, \"Q\": 0.10, \"H\": 4.96, \"R\": 6.33, \"I\": 7.33, \"S\": 6.73, \"J\": 0.22, \"T\": 8.94, \":\": 7.40, \"'\": 7.40, \" \":12.10} score = 0 for i in freq_table: observed = (msg.upper().count(i) /len(msg)) * 100 expected = freq_table[i] score += ((observed - expected )**2) / freq_table[i] return score Chi-square test which penalizes non ascii characters Add a fixed number to the score for every non ascii character found in the message.\nfor i in msg: if not i.isascii(): score +=200 Other things I could try Considering these methods are ‘1-gram’, a method I didn’t try was using ’n-gram’ frequency tables from english.\nTo make this a proper statistical test a final step would be to find the p-value for a given significance level (say 0.05) and for the degress of freedom (the number of classes in the frequency table ).\n",
+  "wordCount" : "335",
+  "inLanguage": "en",
+  "datePublished": "2023-01-26T00:00:00+05:30",
+  "dateModified": "2023-01-26T00:00:00+05:30",
+  "author":[{
+    "@type": "Person",
+    "name": "Tejaswi D Prakash"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tejaswi's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://widp.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +140,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Tejaswi&#39;s blog (Alt + H)">Tejaswi&#39;s blog</a>
+            <a href="https://widp.github.io/blog/" accesskey="h" title="Tejaswi&#39;s blog (Alt + H)">Tejaswi&#39;s blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -99,7 +166,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/tags" title="Tags">
+                <a href="https://widp.github.io/blog/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -201,16 +268,16 @@ Add a fixed number to the score for every non ascii character found in the messa
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/programming/">Programming</a></li>
-      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
-      <li><a href="http://localhost:1313/tags/cryptopals/">Cryptopals</a></li>
+      <li><a href="https://widp.github.io/blog/tags/programming/">Programming</a></li>
+      <li><a href="https://widp.github.io/blog/tags/python/">Python</a></li>
+      <li><a href="https://widp.github.io/blog/tags/cryptopals/">Cryptopals</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">Tejaswi&#39;s blog</a></span> · 
+        <span>&copy; 2024 <a href="https://widp.github.io/blog/">Tejaswi&#39;s blog</a></span> · 
 
     <span>
         Powered by

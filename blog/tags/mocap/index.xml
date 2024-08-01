@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Mocap on Tejaswi&#39;s blog</title>
-    <link>http://localhost:1313/blog/tags/mocap/</link>
+    <link>https://widp.github.io/blog/tags/mocap/</link>
     <description>Recent content in Mocap on Tejaswi&#39;s blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.130.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 05 Mar 2022 00:00:00 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/mocap/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://widp.github.io/blog/tags/mocap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Overview of Parametric Human Body Models</title>
-      <link>http://localhost:1313/blog/posts/human_body_models/</link>
+      <link>https://widp.github.io/blog/posts/human_body_models/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/blog/posts/human_body_models/</guid>
-      <description>Problem with anthropometric data see: CAESAR and ANSUR II&#xA;They all need to be licensed&#xA;A good start to this would be check out the SMPL* body models first they have provided starter code for use with neural network libraries such as tensorflow/pytorch&#xA;This blog post describes how to use the code related to these models Overview of SMPL* models and methods This is from one of their youtube videos :</description>
+      <guid>https://widp.github.io/blog/posts/human_body_models/</guid>
+      <description>Research related to parametric human body models</description>
     </item>
   </channel>
 </rss>
