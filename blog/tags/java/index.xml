@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>java on Tejaswi&#39;s blog</title>
-    <link>https://widp.github.io/blog/tags/java/</link>
-    <description>Recent content in java on Tejaswi&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Java on Tejaswi&#39;s blog</title>
+    <link>http://localhost:1313/blog/tags/java/</link>
+    <description>Recent content in Java on Tejaswi&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Mar 2022 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 00:00:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Initializing List with an array in Java</title>
-      <link>https://widp.github.io/blog/posts/initializing_java_list/</link>
+      <link>http://localhost:1313/blog/posts/initializing_java_list/</link>
       <pubDate>Fri, 18 Mar 2022 00:00:00 +0530</pubDate>
-      
-      <guid>https://widp.github.io/blog/posts/initializing_java_list/</guid>
-      <description>Java lists</description>
+      <guid>http://localhost:1313/blog/posts/initializing_java_list/</guid>
+      <description>Initializing Lists Why is this&#xA;List&amp;lt;Integer&amp;gt; a = new List&amp;lt;Integer&amp;gt;({1,2,3}) not possible?&#xA;Simple workaround&#xA;class ListInit { public static void main(String args[]){ List&amp;lt;Integer&amp;gt; a = Arrays.asList(1,2,3); } } but,&#xA;Is it not possible to initialize a List with an array literal?&#xA;It is!&#xA;That means Arrays.asList() should work with an array literal.&#xA;But the below doesn&amp;rsquo;t work.&#xA;List&amp;lt;Integer&amp;gt; a = Arrays.asList({1,2,3}); Although this does with the &amp;rsquo;new&amp;rsquo; keyword.&#xA;List&amp;lt;Integer&amp;gt; a = Arrays.</description>
     </item>
-    
   </channel>
 </rss>

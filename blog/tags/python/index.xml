@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on Tejaswi&#39;s blog</title>
-    <link>https://widp.github.io/blog/tags/python/</link>
-    <description>Recent content in python on Tejaswi&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Python on Tejaswi&#39;s blog</title>
+    <link>http://localhost:1313/blog/tags/python/</link>
+    <description>Recent content in Python on Tejaswi&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Jan 2023 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Jan 2023 00:00:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Scoring functions for breaking cryptopals ciphers</title>
-      <link>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</link>
+      <link>http://localhost:1313/blog/posts/cryptopals-repeating-key-xor/</link>
       <pubDate>Thu, 26 Jan 2023 00:00:00 +0530</pubDate>
-      
-      <guid>https://widp.github.io/blog/posts/cryptopals-repeating-key-xor/</guid>
-      <description>Scoring functions I tried for breaking set 1 challenge 6 from cryptopals</description>
+      <guid>http://localhost:1313/blog/posts/cryptopals-repeating-key-xor/</guid>
+      <description>The problem is to find a scoring function. A function which assigns a number to the likeliness of a message to be english.&#xA;What I tried for the score computing function Most of them based on &amp;lsquo;ETAOIN SHRDLU&amp;rsquo; (frequency analysis)&#xA;Position based weighting (higher score is better) def scorecompute(msg): score = 0 positions = &amp;#39;ETAOIN SHRDLU&amp;#39; for i in positions: weight = len(positions) - positions.find(i) score += msg.upper().count(i) * weight return score doesn&amp;rsquo;t work so well From this point on higher scores are worse.</description>
     </item>
-    
   </channel>
 </rss>

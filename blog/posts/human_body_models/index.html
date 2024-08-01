@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Overview of Parametric Human Body Models | Tejaswi&#39;s blog</title>
 <meta name="keywords" content="Mocap">
 <meta name="description" content="Research related to parametric human body models">
 <meta name="author" content="Tejaswi D Prakash">
-<link rel="canonical" href="https://widp.github.io/blog/posts/human_body_models/">
+<link rel="canonical" href="http://localhost:1313/posts/human_body_models/">
 <link crossorigin="anonymous" href="../../assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="../../assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://widp.github.io/blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://widp.github.io/blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://widp.github.io/blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://widp.github.io/blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://widp.github.io/blog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/human_body_models/">
 <noscript>
     <style>
         #theme-toggle,
@@ -36,7 +36,7 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -56,76 +56,6 @@
 
     </style>
 </noscript>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
-
-<meta property="og:title" content="Overview of Parametric Human Body Models" />
-<meta property="og:description" content="Research related to parametric human body models" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://widp.github.io/blog/posts/human_body_models/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-03-05T00:00:00&#43;05:30" />
-<meta property="article:modified_time" content="2022-03-05T00:00:00&#43;05:30" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Overview of Parametric Human Body Models"/>
-<meta name="twitter:description" content="Research related to parametric human body models"/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://widp.github.io/blog/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Overview of Parametric Human Body Models",
-      "item": "https://widp.github.io/blog/posts/human_body_models/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Overview of Parametric Human Body Models",
-  "name": "Overview of Parametric Human Body Models",
-  "description": "Research related to parametric human body models",
-  "keywords": [
-    "Mocap"
-  ],
-  "articleBody": "Problem with anthropometric data see: CAESAR and ANSUR II\nThey all need to be licensed\nA good start to this would be check out the SMPL* body models first they have provided starter code for use with neural network libraries such as tensorflow/pytorch\nThis blog post describes how to use the code related to these models Overview of SMPL* models and methods This is from one of their youtube videos :\nsmplify-x This computes a body model using a single photo There is also PiFU-HD which does , but that is non-parametric\nConsequently, we follow the approach of SMPLify, which estimates 2D features and then optimizes model parameters to fit the features.\nthey use 2d features to optimize SMPL-X model parameters\n",
-  "wordCount" : "121",
-  "inLanguage": "en",
-  "datePublished": "2022-03-05T00:00:00+05:30",
-  "dateModified": "2022-03-05T00:00:00+05:30",
-  "author":[{
-    "@type": "Person",
-    "name": "Tejaswi D Prakash"
-  }],
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://widp.github.io/blog/posts/human_body_models/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Tejaswi's blog",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://widp.github.io/blog/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 
 <body class="" id="top">
@@ -143,15 +73,15 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://widp.github.io/blog/" accesskey="h" title="Tejaswi&#39;s blog (Alt + H)">Tejaswi&#39;s blog</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Tejaswi&#39;s blog (Alt + H)">Tejaswi&#39;s blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -169,7 +99,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://widp.github.io/blog/tags" title="Tags">
+                <a href="http://localhost:1313/tags" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -181,7 +111,7 @@
 <article class="post-single">
   <header class="post-header">
     
-    <h1 class="post-title">
+    <h1 class="post-title entry-hint-parent">
       Overview of Parametric Human Body Models
     </h1>
     <div class="post-description">
@@ -217,14 +147,15 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://widp.github.io/blog/tags/mocap/">Mocap</a></li>
+      <li><a href="http://localhost:1313/tags/mocap/">Mocap</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://widp.github.io/blog/">Tejaswi&#39;s blog</a></span>
+        <span>&copy; 2024 <a href="http://localhost:1313/">Tejaswi&#39;s blog</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>emacs on Tejaswi&#39;s blog</title>
-    <link>https://widp.github.io/blog/tags/emacs/</link>
-    <description>Recent content in emacs on Tejaswi&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Emacs on Tejaswi&#39;s blog</title>
+    <link>http://localhost:1313/blog/tags/emacs/</link>
+    <description>Recent content in Emacs on Tejaswi&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Jan 2023 00:00:00 +0530</lastBuildDate><atom:link href="https://widp.github.io/blog/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Jan 2023 00:00:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure Work Items And Org mode</title>
-      <link>https://widp.github.io/blog/posts/azure-work-items-org-mode/</link>
+      <link>http://localhost:1313/blog/posts/azure-work-items-org-mode/</link>
       <pubDate>Thu, 05 Jan 2023 00:00:00 +0530</pubDate>
-      
-      <guid>https://widp.github.io/blog/posts/azure-work-items-org-mode/</guid>
-      <description>Using Azure Issue ids as tags/props in emacs org mode</description>
+      <guid>http://localhost:1313/blog/posts/azure-work-items-org-mode/</guid>
+      <description>The following post is about viewing data from azure work items (ticket id, title etc..) and managing org notes by tagging them.&#xA;Setting up az cli &amp;amp; az devops extension for az cli azure has a cli and for azure devops there is an extension .&#xA;#after installing azure cli &amp;amp; cli devops extension #login az devops login Viewing tickets in org mode (using az wiql) This snippet does two things</description>
     </item>
-    
     <item>
       <title>Thoughts on Viewing Logs</title>
-      <link>https://widp.github.io/blog/posts/viewing_logs/</link>
+      <link>http://localhost:1313/blog/posts/viewing_logs/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0530</pubDate>
-      
-      <guid>https://widp.github.io/blog/posts/viewing_logs/</guid>
-      <description>Viewing Logs And Log Viewers</description>
+      <guid>http://localhost:1313/blog/posts/viewing_logs/</guid>
+      <description>log viewing What I tried Logview mode emacs&#xA;Notepad++&#xA;Notepad++ supports &amp;lsquo;User Defined Languages&amp;rsquo; for key word highlighting, folding etc..&#xA;Wrote a log search gui in tkinter&#xA;Tried this first , until I discovered notepad++ has all of the features I added built into it.&#xA;How I wanted to go about it Regular expression for the tokens and parsing for the log format Turns out you don&amp;rsquo;t need that level of configuration See 1 timestamp tz LEVEL message etc.</description>
     </item>
-    
   </channel>
 </rss>
