@@ -142,6 +142,18 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Streetlights per ward in Bengaluru
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Streetlights per ward in Bengaluru # Uncomment to install geopandas if not already installed # !pip install geopandas import geopandas as gpd import pandas as pd # Load data lights = pd.read_csv(&#34;C:\\Users\\ADMIN\\Downloads\\streetlights-in-bengaluru-wards.csv&#34;) world = gpd.read_file(&#34;BBMP.geojson&#34;) # Plot the world GeoDataFrame world.plot() # Convert &#39;KGISWardName&#39; columns to string world[&#39;KGISWardName&#39;] = world[&#39;KGISWardName&#39;].astype(str) lights[&#39;KGISWardName&#39;] = lights[&#39;KGISWardName&#39;].astype(str) lights[&#39;Street lights&#39;] = lights[&#39;Street lights&#39;].astype(int) # Merge the DataFrames on &#39;KGISWardName&#39; result = pd.merge(world, lights, on=&#39;KGISWardName&#39;, how=&#39;inner&#39;) result....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-11-01 00:00:00 +0530 IST'>November 1, 2024</span>&nbsp;·&nbsp;Tejaswi D Prakash</footer>
+  <a class="entry-link" aria-label="post link to Streetlights per ward in Bengaluru" href="https://widp.github.io/blog/posts/diwali_project/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Single Period Option Pricing
     </h2>
   </header>
@@ -271,23 +283,6 @@ This can be done using git ‘sparse checkout’
   </div>
   <footer class="entry-footer"><span title='2022-06-16 00:00:00 +0530 IST'>June 16, 2022</span>&nbsp;·&nbsp;Tejaswi D Prakash</footer>
   <a class="entry-link" aria-label="post link to Using git with large mono repos" href="https://widp.github.io/blog/posts/git_for_mono_repos/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Nvarchar and Nchar oracle db
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>NVARCHAR and NCHAR in oracle Oracle supports multiple charactersets at the same time through its use of the NLS* paramters.
-select * from nls_database_parameters where parameter in (&#39;NLS_LENGTH_SEMANTICS&#39;, &#39;NLS_CHARACTERSET&#39;, &#39;NLS_NCHAR_CHARACTERSET&#39;); There are two things to note
-The value of NLS_CHARACTERSET The value of NLS_NCHAR_CHARACTERSET on my system the values are the following
-NLS_NCHAR_CHARACTERSET = AL16UTF16
-NLS_CHARACTERSET = WE8ISO8859P1
-If you haven’t already guessed from the title of this article, NVARCHAR and NCHAR are two additional data types which behave similar to VARCHAR and CHAR....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-05-27 00:00:00 +0530 IST'>May 27, 2022</span>&nbsp;·&nbsp;Tejaswi D Prakash</footer>
-  <a class="entry-link" aria-label="post link to Nvarchar and Nchar oracle db" href="https://widp.github.io/blog/posts/nvarchar/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

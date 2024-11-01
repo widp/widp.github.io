@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://widp.github.io/blog/tags/bengaluru/</loc>
+    <lastmod>2024-11-01T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/tags/dataset/</loc>
+    <lastmod>2024-11-01T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/tags/plots/</loc>
+    <lastmod>2024-11-01T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/posts/</loc>
+    <lastmod>2024-11-01T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/posts/diwali_project/</loc>
+    <lastmod>2024-11-01T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/tags/</loc>
+    <lastmod>2024-11-01T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://widp.github.io/blog/</loc>
+    <lastmod>2024-11-01T00:00:00+05:30</lastmod>
+  </url><url>
     <loc>https://widp.github.io/blog/tags/finance/</loc>
     <lastmod>2024-08-15T00:00:00+05:30</lastmod>
   </url><url>
     <loc>https://widp.github.io/blog/tags/mathematics/</loc>
     <lastmod>2024-08-15T00:00:00+05:30</lastmod>
   </url><url>
-    <loc>https://widp.github.io/blog/posts/</loc>
-    <lastmod>2024-08-15T00:00:00+05:30</lastmod>
-  </url><url>
     <loc>https://widp.github.io/blog/posts/option_pricing/</loc>
-    <lastmod>2024-08-15T00:00:00+05:30</lastmod>
-  </url><url>
-    <loc>https://widp.github.io/blog/tags/</loc>
-    <lastmod>2024-08-15T00:00:00+05:30</lastmod>
-  </url><url>
-    <loc>https://widp.github.io/blog/</loc>
     <lastmod>2024-08-15T00:00:00+05:30</lastmod>
   </url><url>
     <loc>https://widp.github.io/blog/posts/kelly_criterion_and_betting/</loc>

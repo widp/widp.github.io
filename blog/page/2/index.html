@@ -136,6 +136,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Nvarchar and Nchar oracle db
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>NVARCHAR and NCHAR in oracle Oracle supports multiple charactersets at the same time through its use of the NLS* paramters.
+select * from nls_database_parameters where parameter in (&#39;NLS_LENGTH_SEMANTICS&#39;, &#39;NLS_CHARACTERSET&#39;, &#39;NLS_NCHAR_CHARACTERSET&#39;); There are two things to note
+The value of NLS_CHARACTERSET The value of NLS_NCHAR_CHARACTERSET on my system the values are the following
+NLS_NCHAR_CHARACTERSET = AL16UTF16
+NLS_CHARACTERSET = WE8ISO8859P1
+If you haven’t already guessed from the title of this article, NVARCHAR and NCHAR are two additional data types which behave similar to VARCHAR and CHAR....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-05-27 00:00:00 +0530 IST'>May 27, 2022</span>&nbsp;·&nbsp;Tejaswi D Prakash</footer>
+  <a class="entry-link" aria-label="post link to Nvarchar and Nchar oracle db" href="https://widp.github.io/blog/posts/nvarchar/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Initializing List with an array in Java
     </h2>
   </header>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Plots on Tejaswi&#39;s blog</title>
+    <link>https://widp.github.io/blog/tags/plots/</link>
+    <description>Recent content in Plots on Tejaswi&#39;s blog</description>
+    <generator>Hugo -- 0.130.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0530</lastBuildDate>
+    <atom:link href="https://widp.github.io/blog/tags/plots/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Streetlights per ward in Bengaluru</title>
+      <link>https://widp.github.io/blog/posts/diwali_project/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0530</pubDate>
+      <guid>https://widp.github.io/blog/posts/diwali_project/</guid>
+      <description>Streetlights per ward in Bengaluru # Uncomment to install geopandas if not already installed # !pip install geopandas import geopandas as gpd import pandas as pd # Load data lights = pd.read_csv(&amp;#34;C:\\Users\\ADMIN\\Downloads\\streetlights-in-bengaluru-wards.csv&amp;#34;) world = gpd.read_file(&amp;#34;BBMP.geojson&amp;#34;) # Plot the world GeoDataFrame world.plot() # Convert &amp;#39;KGISWardName&amp;#39; columns to string world[&amp;#39;KGISWardName&amp;#39;] = world[&amp;#39;KGISWardName&amp;#39;].astype(str) lights[&amp;#39;KGISWardName&amp;#39;] = lights[&amp;#39;KGISWardName&amp;#39;].astype(str) lights[&amp;#39;Street lights&amp;#39;] = lights[&amp;#39;Street lights&amp;#39;].astype(int) # Merge the DataFrames on &amp;#39;KGISWardName&amp;#39; result = pd.merge(world, lights, on=&amp;#39;KGISWardName&amp;#39;, how=&amp;#39;inner&amp;#39;) result.</description>
+    </item>
+  </channel>
+</rss>
